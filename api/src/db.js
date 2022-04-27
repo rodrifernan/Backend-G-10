@@ -14,6 +14,7 @@ const basename = path.basename(__filename);
 
 const modelDefiners = [];
 
+
 // Leemos todos los archivos de la carpeta Models, los requerimos y agregamos al arreglo modelDefiners
 fs.readdirSync(path.join(__dirname, '/models'))
   .filter((file) => (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js'))
@@ -37,6 +38,7 @@ const {
   ShoppingCart,
   Wishlist,
   Product,
+  Category,
   Order
 
 } = sequelize.models;
@@ -49,12 +51,9 @@ const {
 // se añade una clave user_id a la tabla order
 User.hasMany(Order, {as: 'user', foreignKey: 'user_id'});
 
-
-
-
-
-
-
+// Tabla Product Relacion(1) --> (*) Category
+Category.hasMany(Product);
+Product.belongsTo(Category);
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');

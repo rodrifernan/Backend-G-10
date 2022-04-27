@@ -6,31 +6,31 @@ module.exports = (sequelize) => {
   sequelize.define('product', {
     name: {
           type: DataTypes.STRING(20),
-          allowNull: false,},
+          allowNull: true,},
     description: { 
           type: DataTypes.STRING(100),
-          allowNull: false,},
-    category_id: { 
-          type: DataTypes.INTEGER,
-          allowNull: false,},
+          allowNull: true,},
+//     category_id: { 
+//           type: DataTypes.INTEGER,
+//           allowNull: true,},
     price: {
           type: DataTypes.INTEGER,
-          allowNull: false,},
+          allowNull: true,},
     brand: { 
           type: DataTypes.STRING(20),
-          allowNull: false,},
+          allowNull: true,},
     color: { 
           type: DataTypes.STRING(10),
-          allowNull: false,},
+          allowNull: true,},
     warranty: {  // grantia
           type: DataTypes.INTEGER,
-          allowNull: false,},
+          allowNull: true,},
     image: { 
             type: DataTypes.STRING(100),
-            allowNull: false,},
+            allowNull: true,},
     discount: {  // descuento
             type: DataTypes.INTEGER,
-            allowNull: false,},
+            allowNull: true,},
     
   
   });
