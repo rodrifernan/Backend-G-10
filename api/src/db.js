@@ -36,6 +36,7 @@ const {
   Role,
   ShoppingCart,
   Wishlist,
+  Product,
   Order
 
 } = sequelize.models;
