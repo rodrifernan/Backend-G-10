@@ -35,13 +35,25 @@ const {
   User,
   Role,
   ShoppingCart,
-  Wishlist
-
+  Wishlist,
+  Order
 
 } = sequelize.models;
 
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews);
+
+
+//usuario va atener muchos ordenes
+// se añade una clave user_id a la tabla order
+User.hasMany(Order, {as: 'user', foreignKey: 'user_id'});
+
+
+
+
+
+
+
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
