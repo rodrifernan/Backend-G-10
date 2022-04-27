@@ -22,6 +22,11 @@ module.exports = (sequelize) => {
         
         unique: true,
       },
+    quantity:{
+        type: DataTypes.INTEGER,
+        allowNull:false
+        
+    }
    
     
 

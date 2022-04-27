@@ -10,18 +10,12 @@ module.exports = (sequelize) => {
       autoIncrement: true,
       primaryKey: true,
     },
-    product_id: {
+    title: {
       type: DataTypes.STRING,
       allowNull: false,
       
       unique: true,
     },
-    user_id: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        
-        unique: true,
-      },
    
     
 
