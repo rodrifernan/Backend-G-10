@@ -39,7 +39,8 @@ const {
   Wishlist,
   Product,
   Category,
-  Order
+  Order,
+  Reviews
 
 } = sequelize.models;
 
@@ -71,6 +72,10 @@ User.belongsTo(ShoppingCart);
 //shoppingcart/product 1-*
 ShoppingCart.hasMany(Product);
 Product.belongsTo(ShoppingCart);
+
+//product/review
+Product.hasMany(Reviews);
+Reviews.belongsTo(Product);
 
 //user/product *-*
 User.belongsToMany(Product, { through: 'wishlist' });

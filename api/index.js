@@ -23,13 +23,14 @@ const { conn } = require('./src/db.js');
 
 const categoryMockUp = require("./json/categories");
 const productMockUp = require("./json/products");
-
+const reviewMockUp = require("./json/reviews");
 // Syncing all the models at once.
 conn.sync({ force: true })
 .then(async() => {
 
   await categoryMockUp();
   await productMockUp();
+  await reviewMockUp()
 
 
   await server.listen(3001, () => {
