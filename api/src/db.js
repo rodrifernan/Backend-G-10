@@ -51,6 +51,7 @@ const {
 // se añade una clave user_id a la tabla order
 User.hasMany(Order, {as: 'user', foreignKey: 'user_id'});
 
+Role.hasOne(User);
 // Tabla Product Relacion(1) --> (*) Category
 Category.hasMany(Product);
 Product.belongsTo(Category);
