@@ -46,14 +46,35 @@ const {
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews);
 
+// usuario/roles 1a1
+User.hasOne(Role);
+Role.belongsTo(User);
 
-//usuario va atener muchos ordenes
+//usuario/ordenes 1-*
 // se añade una clave user_id a la tabla order
-User.hasMany(Order, {as: 'user', foreignKey: 'user_id'});
+User.hasMany(Order);
+Order.belongsTo(User);
+
+//orde/product */1
+Product.hasMany(Order);
+Order.belongsTo(Product);
 
 // Tabla Product Relacion(1) --> (*) Category
 Category.hasMany(Product);
 Product.belongsTo(Category);
+
+//User/ShoppingCart 1-*
+ShoppingCart.hasMany(User);
+User.belongsTo(ShoppingCart);
+
+
+//shoppingcart/product 1-*
+ShoppingCart.hasMany(Product);
+Product.belongsTo(ShoppingCart);
+
+//user/product *-*
+User.belongsToMany(Product, { through: 'wishlist' });
+Product.belongsToMany(User, { through: 'wishlist' });
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
