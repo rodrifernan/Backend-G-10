@@ -42,10 +42,7 @@ module.exports = (sequelize) => {
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    role_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
+
     idPersonal: {
       type: DataTypes.STRING,
       allowNull: false,
