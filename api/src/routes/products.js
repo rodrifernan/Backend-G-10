@@ -52,11 +52,7 @@ const getAllProduct = async (getAllBdProduct) => {
       rating      : elem.rating,
       warranty    : elem.warranty,
       category    : elem.category.name,
-// <<<<<<< Modificacion-tabla-product
       reviews : elem.reviews.map(ele => ele.rating)
-=======
-//       reviews : elem.reviews[0].rating
-// >>>>>>> master
   }})                
   return(getAllBdProduct1)
   
