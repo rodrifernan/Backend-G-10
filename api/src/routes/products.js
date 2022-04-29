@@ -9,8 +9,7 @@ const {Op} = require('sequelize');
      - Obtener un listado de los productos
      - Debe devolver solo los datos necesarios para la ruta principal
    - [ ] __GET /products?name="..."__:
-     - Obtener un listado de las razas de perro que contengan la palabra ingresada como query parameter
-     - Si no existe ninguna raza de perro mostrar un mensaje adecuado
+     - Obtener un listado de los products
 */
 router.get('/', async (req, res, next) => {
   //console.log('Estoy BACK get __GET /products__ ',req.query)
@@ -27,7 +26,11 @@ router.get('/', async (req, res, next) => {
              include: [Category, Reviews], // name de la categoria relacionado a su categoryId
              where:{name: {[Op.iLike] : `${name}%`}} // Filtra por name product
          }) 
+
          //console.log(getAllBdProduct)
+
+      
+
          return res.send(await getAllProduct(getAllBdProduct));
       }     
       }catch(error) {next(error)}
@@ -49,7 +52,11 @@ const getAllProduct = async (getAllBdProduct) => {
       rating      : elem.rating,
       warranty    : elem.warranty,
       category    : elem.category.name,
+// <<<<<<< Modificacion-tabla-product
       reviews : elem.reviews.map(ele => ele.rating)
+=======
+//       reviews : elem.reviews[0].rating
+// >>>>>>> master
   }})                
   return(getAllBdProduct1)
   
