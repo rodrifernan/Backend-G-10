@@ -2,7 +2,7 @@ const { Product } = require("../src/db");
 const productMockUp = async () => {
   try {
     await Product.create({
-      name: "PC CUCA", //name: "Headphones",
+      name: "PC HP", //name: "Headphones",
       price: 300,
       // newItem: false,
       brand: "Samsung",
