@@ -83,6 +83,26 @@ const productMockUp = async () => {
       reviewsId:1,
       genresId:1,
     });
+
+    await Product.create({
+      name: "Espejo",
+      price: 500,
+      // newItem: false,
+      brand: "Generica",
+      color: "BLACK",
+      warranty: 1,
+      discount: 30,
+      image: [
+        "https://picsum.photos/300",
+        "https://picsum.photos/300",
+      ],
+      stock: 20,
+      description:'Espejo con zoom',
+     
+      brand: 1,
+      categoryId: 2,
+      reviewsId:1
+    });
    
   } catch (e) {
     console.log(e.message);
