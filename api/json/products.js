@@ -18,7 +18,8 @@ const productMockUp = async () => {
       // rating: 0,
       brand: 1,
       categoryId: 1,
-      reviewsId:1
+      reviewsId:1,
+      genresId:1,
     });
     await Product.create({
       name: "PC MASTER",
@@ -37,7 +38,8 @@ const productMockUp = async () => {
       // rating: 0,
       brand: 1,
       categoryId: 2,
-      reviewsId:1
+      reviewsId:1,
+      genresId:2,
     });
 
     await Product.create({
@@ -57,7 +59,8 @@ const productMockUp = async () => {
       // rating: 0,
       brand: 1,
       categoryId: 3,
-      reviewsId:1
+      reviewsId:1,
+      genresId:3,
     });
 
     await Product.create({
@@ -77,7 +80,8 @@ const productMockUp = async () => {
      
       brand: 1,
       categoryId: 4,
-      reviewsId:1
+      reviewsId:1,
+      genresId:1,
     });
    
   } catch (e) {

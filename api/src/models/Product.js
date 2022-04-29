@@ -46,10 +46,6 @@ module.exports = (sequelize) => {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    genre: {
-      type: DataTypes.ENUM('Women','Men','Unisex'),
-     
-    },
     reviewsId:{
       type: DataTypes.INTEGER,
       
