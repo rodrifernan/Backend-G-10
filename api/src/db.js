@@ -40,7 +40,8 @@ const {
   Product,
   Category,
   Order,
-  Reviews
+  Reviews,
+  Genre
 
 } = sequelize.models;
 
@@ -49,7 +50,6 @@ const {
 
 // usuario/roles 1a1
 User.hasOne(Role);
-Role.belongsTo(User);
 
 //usuario/ordenes 1-*
 // se añade una clave user_id a la tabla order
@@ -81,6 +81,10 @@ Reviews.belongsTo(Product);
 //user/product *-*
 User.belongsToMany(Product, { through: 'wishlist' });
 Product.belongsToMany(User, { through: 'wishlist' });
+
+//genre/product 1-*
+Genre.hasMany(Product);
+Product.belongsTo(Genre);
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
