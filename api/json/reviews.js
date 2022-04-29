@@ -1,6 +1,7 @@
 const { Reviews } = require("../src/db");
 const reviewsMockUp = async () => {
   try {
+    
     await Reviews.create({
       rating: 1,
       comment: 'kafhkjasnfkasnfkjashfknasfnaskjfnas',
