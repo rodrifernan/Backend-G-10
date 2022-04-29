@@ -26,7 +26,11 @@ router.get('/', async (req, res, next) => {
              include: [Category, Reviews], // name de la categoria relacionado a su categoryId
              where:{name: {[Op.iLike] : `${name}%`}} // Filtra por name product
          }) 
-         console.log(getAllBdProduct)
+
+         //console.log(getAllBdProduct)
+
+      
+
          return res.send(await getAllProduct(getAllBdProduct));
       }     
       }catch(error) {next(error)}
@@ -48,7 +52,11 @@ const getAllProduct = async (getAllBdProduct) => {
       rating      : elem.rating,
       warranty    : elem.warranty,
       category    : elem.category.name,
-      reviews : elem.reviews[0].rating
+// <<<<<<< Modificacion-tabla-product
+      reviews : elem.reviews.map(ele => ele.rating)
+=======
+//       reviews : elem.reviews[0].rating
+// >>>>>>> master
   }})                
   return(getAllBdProduct1)
   
