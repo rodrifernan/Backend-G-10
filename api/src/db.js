@@ -60,6 +60,7 @@ Order.belongsTo(User);
 Product.hasMany(Order);
 Order.belongsTo(Product);
 
+// Role.hasOne(User);
 // Tabla Product Relacion(1) --> (*) Category
 Category.hasMany(Product);
 Product.belongsTo(Category);
