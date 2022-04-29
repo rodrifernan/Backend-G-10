@@ -12,9 +12,6 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING(1234),
       allowNull: true,
     },
-        categoryId: {
-              type: DataTypes.INTEGER,
-              allowNull: true,},
     price: {
       type: DataTypes.INTEGER,
       allowNull: true,
@@ -46,9 +43,5 @@ module.exports = (sequelize) => {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    reviewsId:{
-      type: DataTypes.INTEGER,
-      
-    }
   });
 };
