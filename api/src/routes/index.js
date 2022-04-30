@@ -8,6 +8,7 @@ const genresFilter = require('./genre');
 const login = require('./login');
 const shoppingCart = require('./shoppingCart');
 const wishlist = require('./wishlist');
+const productById = require('./productById');
 
 
 
@@ -23,10 +24,10 @@ router.use('/categories',categories);
 router.use('/user', user); 
 router.use('/filtercategory', filtercategory); 
 router.use('/genresFilter', genresFilter); 
-
 router.use('/login', login); 
 router.use('/shoppingCart', shoppingCart); 
 router.use('/wishlist', wishlist); 
+router.use('/productId', productById);
 
 
 
