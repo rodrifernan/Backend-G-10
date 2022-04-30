@@ -19,6 +19,7 @@ router.get('/', async (req, res, next) => {
          let getAllBdProduct = await Product.findAll({
              include: [Category, Reviews] // name de la categoria relacionado a su categoryId
          }) 
+         //return res.status(200).send(getAllBdProduct)
          return res.status(200).send(await getAllProduct(getAllBdProduct));
       }else { // Filter by name, name is not empty
         console.log('Estoy BACK get __GET /products Name ',req.query)
@@ -44,10 +45,9 @@ const getAllProduct = async (getAllBdProduct) => {
       color       : elem.color, 
       discount    : elem.discount,
       stock       : elem.stock,
-      rating      : elem.rating,
       warranty    : elem.warranty,
       category    : elem.category.name,
-      reviews : elem.reviews.map(ele => ele.rating)
+      reviews      : elem.review.rating
   }})                
   return(getAllBdProduct1) 
 }
