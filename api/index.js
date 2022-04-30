@@ -24,6 +24,10 @@ const { conn } = require('./src/db.js');
 const categoryMockUp = require("./json/categories");
 const productMockUp = require("./json/products");
 const reviewMockUp = require("./json/reviews");
+const usersMockUp = require("./json/users");
+const rolesMockUp = require("./json/roles");
+const shoppingCartMockUp = require("./json/shoppingCart");
+const wishlistCartMockUp = require("./json/wishlist");
 
 // Syncing all the models at once.
 conn.sync({ force: true })
@@ -31,8 +35,11 @@ conn.sync({ force: true })
 
   await categoryMockUp();
   await productMockUp();
-  await reviewMockUp()
-
+  await reviewMockUp();
+  await rolesMockUp();
+  await usersMockUp();
+  await shoppingCartMockUp();
+  await wishlistCartMockUp();
 
   await server.listen(3001, () => {
     console.log('%s listening at 3001'); // eslint-disable-line no-console
