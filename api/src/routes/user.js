@@ -1,8 +1,9 @@
 const { Router } = require('express');
+const bcrypt = require('bcrypt');
 const { body, validationResult } = require('express-validator');
 const { User } = require('../db'); // traer mi modelo
 const router = Router();
-
+const loginVerification = require('../middlewares/loginVerification');
 // Validators
 
 const userValidators = [
@@ -101,9 +102,9 @@ router.post('/', userValidators, async (req, res, next) => {
   } = req.body;
 
   try {
-    let user = await User.create({
+    await User.create({
       userName,
-      password,
+      password: bcrypt.hashSync(password, 10),
       firstName,
       lastName,
       phone,
@@ -114,11 +115,23 @@ router.post('/', userValidators, async (req, res, next) => {
       idPersonal,
     });
 
-    // await user.set;
-
-    // return res.send(await postBdProduct.setCategory(categoryId));
-    //return res.status(200).send(getAllBdProduct);
     return res.status(201).send({ msg: 'Registro Completo' });
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.get('/', loginVerification, async (req, res, next) => {
+  try {
+    const { id } = req.user;
+
+    const user = await User.findByPk(id, {
+      attributes: {
+        exclude: ['password', 'roleId', 'banned', 'createdAt', 'updatedAt'],
+      },
+    });
+
+    return res.send(user);
   } catch (error) {
     next(error);
   }

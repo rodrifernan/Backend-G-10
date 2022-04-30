@@ -10,18 +10,6 @@ module.exports = (sequelize) => {
       autoIncrement: true,
       primaryKey: true,
     },
-    product_id: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      
-      unique: true,
-    },
-    user_id: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        
-        unique: true,
-      },
     quantity:{
         type: DataTypes.INTEGER,
         allowNull:false

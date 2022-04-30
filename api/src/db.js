@@ -49,7 +49,8 @@ const {
 // Product.hasMany(Reviews);
 
 // usuario/roles 1a1
-User.hasOne(Role);
+Role.hasOne(User);
+User.belongsTo(Role);
 
 //usuario/ordenes 1-*
 // se añade una clave user_id a la tabla order
@@ -66,21 +67,24 @@ Category.hasMany(Product);
 Product.belongsTo(Category);
 
 //User/ShoppingCart 1-*
-ShoppingCart.hasMany(User);
-User.belongsTo(ShoppingCart);
+User.hasOne(ShoppingCart);
+ShoppingCart.belongsTo(User);
 
-
-//shoppingcart/product 1-*
-ShoppingCart.hasMany(Product);
-Product.belongsTo(ShoppingCart);
+//User/ShoppingCart 1-*
+Product.hasMany(ShoppingCart);
+ShoppingCart.belongsTo(Product);
 
 //product/review
 Product.hasMany(Reviews);
 Reviews.belongsTo(Product);
 
 //user/product *-*
-User.belongsToMany(Product, { through: 'wishlist' });
-Product.belongsToMany(User, { through: 'wishlist' });
+User.hasOne(Wishlist);
+Wishlist.belongsTo(User);
+
+//wishlist/product *-*
+Product.hasMany(Wishlist);
+Wishlist.belongsTo(Product);
 
 //genre/product 1-*
 Genre.hasMany(Product);
