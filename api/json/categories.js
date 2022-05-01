@@ -5,9 +5,7 @@ const categoryMockUp = async () => {
       name: "Electronic",
     });
 
-    await Category.create({
-      name: "Shoes",
-    });
+
     await Category.create({
       name: "Beaty",
     });
