@@ -47,7 +47,7 @@ const getAllProduct = async (getAllBdProduct) => {
       stock       : elem.stock,
       warranty    : elem.warranty,
       category    : elem.category.name,
-      reviews      : elem.review.rating
+      // reviews      : elem.review.rating
   }})                
   return(getAllBdProduct1) 
 }

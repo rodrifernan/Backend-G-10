@@ -2,7 +2,7 @@ const { Product } = require("../src/db");
 const productMockUp = async () => {
   try {
 
-    // ******************************************BEATY***************************
+    // ******************************************BEAUTY***************************
     await Product.create({
       name: "Limpiador facial", 
       price: 300,
@@ -57,8 +57,77 @@ const productMockUp = async () => {
       // brand: 1,
       categoryId: 2,
       reviewsId:1,
-      genresId:2,
+      genresId:1,
     });
+    await Product.create({
+      name: "Removedor acne y espinillas",
+      price: 65,
+      // newItem: false,
+      brand: "Generico",
+      color: "Rosa",
+      warranty: 1,
+      discount: 10,
+      image: [
+        "https://res.cloudinary.com/dr8u3dssn/image/upload/v1651376563/beaty/removedor%20espinillas/1_1_kksqhj.png",
+        "https://res.cloudinary.com/dr8u3dssn/image/upload/v1651376563/beaty/removedor%20espinillas/1_3_uglovp.png",
+        "https://res.cloudinary.com/dr8u3dssn/image/upload/v1651376563/beaty/removedor%20espinillas/1_2_iwtkht.png",
+      ],
+      stock: 20,
+      description:'Esta máquina portátil de belleza anti acne, microdermoabrasión viene con 4 puntas intercambiables, con 4 funciones diferentes. Es la primera máquina de belleza que se integra con el peeling de la piel, el estiramiento de la cara, la limpieza de poros, la espinilla y la extracción y eliminación de arrugas en el mercado.\
+      Cinco niveles, adecuados para pieles diferentes.',
+      // rating: 0,
+      // brand: 1,
+      categoryId: 2,
+      reviewsId:1,
+      genresId:1,
+    });
+    await Product.create({
+      name: "Depilador de nariz",
+      price: 65,
+      // newItem: false,
+      brand: "Generico",
+      color: "Rosa",
+      warranty: 1,
+      discount: 10,
+      image: [
+        "https://res.cloudinary.com/dr8u3dssn/image/upload/v1651376615/beaty/depilador/2_1_f3acfj.png",
+        "https://res.cloudinary.com/dr8u3dssn/image/upload/v1651376615/beaty/depilador/2_2_cqdnuf.png",
+        "https://res.cloudinary.com/dr8u3dssn/image/upload/v1651376615/beaty/depilador/2_3_hljho7.png",
+      ],
+      stock: 10,
+      description:'¿Molesto por esos pequeños pelos de la nariz que se niegan a salir? La solución es pequeña, sencilla y rápida. El cortador de vello nasal Nose Trimmer elimina con suavidad los vellos no deseados de la nariz y las orejas. Este producto está diseñado especialmente para asegurar un corte rápido, sencillo, cómodo y sin tirones. El cortador es totalmente lavable, fácil de sostener y controlar. Lleva a tu tocador o baño la cortadora de vello nasal.\
+      Colores disponibles: Plateado, Negro (consultar previamente)',
+      // rating: 0,
+      // brand: 1,
+      categoryId: 2,
+      reviewsId:1,
+      genresId:3,
+    });
+    await Product.create({
+      name: "Corrector Repingador Nasal",
+      price: 35,
+      // newItem: false,
+      brand: "Generico",
+      color: "Rosa",
+      warranty: 1,
+      discount: 16,
+      image: [
+        "https://res.cloudinary.com/dr8u3dssn/image/upload/v1651376638/beaty/nariz/3_1_ecvwx8.png",
+        "https://res.cloudinary.com/dr8u3dssn/image/upload/v1651376638/beaty/nariz/3_2_ppt4rg.png",
+        "https://res.cloudinary.com/dr8u3dssn/image/upload/v1651376638/beaty/nariz/3_3_avexvo.png",
+      ],
+      stock: 13,
+      description:'\
+      Color: Negro\
+      Material: Silicona de grado médico + Plastico\
+      Cantidad: 6 Unidades (3 pares) + Extractor de piezas',
+      // rating: 0,
+      // brand: 1,
+      categoryId: 2,
+      reviewsId:1,
+      genresId:3,
+    });
+
 
 
     // ********************************ELECTRONIC****************
