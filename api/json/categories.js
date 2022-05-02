@@ -7,7 +7,7 @@ const categoryMockUp = async () => {
 
 
     await Category.create({
-      name: "Beaty",
+      name: "Beauty",
     });
     await Category.create({
       name: "Sports",
