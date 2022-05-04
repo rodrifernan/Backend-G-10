@@ -5,7 +5,10 @@ const loginValidator = (req, res, next) => {
     req.user = jwt.verify(req.header('auth-token'), process.env.TOKEN_SECRET);
     next();
   } catch (err) {
-    res.status(400).send({ msg: 'Token no es válido.' });
+    res.status(401).send({
+      type: 'unauthorized',
+      msg: 'Acceso denegado.',
+    });
   }
 };
 
