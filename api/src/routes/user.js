@@ -62,7 +62,6 @@ const userValidators = [
     .isEmpty()
     .withMessage('Este campo es obligatorio.')
     .isEmail()
-    .normalizeEmail()
     .withMessage('Ingresé un email válido.')
     .custom(value => {
       return User.findOne({ where: { email: value } }).then(user => {
@@ -87,32 +86,10 @@ router.post('/', userValidators, async (req, res, next) => {
   if (!errors.isEmpty()) {
     return res.status(400).json({ errors: errors.array() });
   }
-
-  const {
-    userName,
-    password,
-    firstName,
-    lastName,
-    phone,
-    email,
-    banned,
-    address,
-    roleId,
-    idPersonal,
-  } = req.body;
-
   try {
     await User.create({
-      userName,
-      password: bcrypt.hashSync(password, 10),
-      firstName,
-      lastName,
-      phone,
-      email,
-      banned,
-      address,
-      roleId,
-      idPersonal,
+      ...req.body,
+      password: bcrypt.hashSync(req.body.password, 10),
     });
 
     return res.status(201).send({ msg: 'Registro Completo' });
