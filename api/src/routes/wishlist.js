@@ -38,4 +38,23 @@ router.get('/', loginVerification, async (req, res, next) => {
   }
 });
 
+router.post('/', loginVerification, async (req, res, next) => {
+  try {
+    const { id: userId } = req.user;
+
+    await Wishlist.destroy({ where: { userId } });
+
+    req.body.forEach(async ({ productId }) => {
+      await Wishlist.create({
+        userId,
+        productId,
+      });
+    });
+
+    res.status(201).send({ type: 'success', msg: 'Successfully created' });
+  } catch (error) {
+    next(error);
+  }
+});
+
 module.exports = router;
