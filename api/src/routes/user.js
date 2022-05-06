@@ -16,9 +16,10 @@ const userValidators = [
     .withMessage(
       'Ingresé un nombre de usuario que no contenga caracteres especiales ni espacios.'
     )
-    .custom(value => {
+    .custom((value, { req }) => {
       return User.findOne({ where: { userName: value } }).then(user => {
         if (user) {
+          if (req.route.path === '/update' && req.user.id === user.id) return;
           return Promise.reject('Este nombre de usuario ya está en uso.');
         }
       });
@@ -63,9 +64,10 @@ const userValidators = [
     .withMessage('Este campo es obligatorio.')
     .isEmail()
     .withMessage('Ingresé un email válido.')
-    .custom(value => {
+    .custom((value, { req }) => {
       return User.findOne({ where: { email: value } }).then(user => {
         if (user) {
+          if (req.route.path === '/update' && req.user.id === user.id) return;
           return Promise.reject('Este email ya está en uso.');
         }
       });
@@ -80,8 +82,6 @@ const userValidators = [
     - [ ] __POST /user: */
 
 router.post('/', userValidators, async (req, res, next) => {
-  console.log('POST /user');
-
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(400).json({ errors: errors.array() });
@@ -113,5 +113,35 @@ router.get('/', loginVerification, async (req, res, next) => {
     next(error);
   }
 });
+
+router.post(
+  '/update',
+  [
+    loginVerification,
+    ...userValidators.filter((item, index) => ![1, 2, 7, 9].includes(index)),
+  ],
+  async (req, res, next) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+
+    try {
+      const { id } = req.user;
+
+      await User.update(req.body, {
+        where: {
+          id,
+        },
+      });
+
+      res.send({
+        msg: 'Datos Actualizados.',
+      });
+    } catch (error) {
+      next(error);
+    }
+  }
+);
 
 module.exports = router;
