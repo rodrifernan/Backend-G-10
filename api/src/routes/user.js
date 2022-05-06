@@ -25,14 +25,21 @@ const userValidators = [
       });
     }),
   body('password')
+    .not()
+    .isEmpty()
+    .withMessage('Este campo es obligatorio.')
     .isLength({ min: 5 })
     .withMessage('Ingresé una contraseña más larga.'),
-  body('passwordConfirmation').custom((value, { req }) => {
-    if (value !== req.body.password) {
-      throw new Error('Las contraseñas no coinciden.');
-    }
-    return true;
-  }),
+  body('passwordConfirmation')
+    .not()
+    .isEmpty()
+    .withMessage('Este campo es obligatorio.')
+    .custom((value, { req }) => {
+      if (value !== req.body.password) {
+        throw new Error('Las contraseñas no coinciden.');
+      }
+      return true;
+    }),
   body('firstName')
     .not()
     .isEmpty()
@@ -137,6 +144,61 @@ router.post(
 
       res.send({
         msg: 'Datos Actualizados.',
+      });
+    } catch (error) {
+      next(error);
+    }
+  }
+);
+
+router.post(
+  '/newPassword',
+  [
+    loginVerification,
+    ...userValidators.filter((item, index) => [1, 2].includes(index)),
+    body('newPassword')
+      .not()
+      .isEmpty()
+      .withMessage('Este campo es obligatorio.')
+      .isLength({ min: 5 })
+      .withMessage('Ingresé una contraseña más larga.'),
+  ],
+  async (req, res, next) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+
+    try {
+      const { id } = req.user;
+
+      const { password } = req.body;
+
+      const user = await User.findByPk(id);
+
+      if (!bcrypt.compareSync(password, user.password))
+        return res.status(400).send({
+          errors: [
+            {
+              msg: 'Contraseña Incorrecta.',
+              param: 'password',
+            },
+          ],
+        });
+
+      await User.update(
+        {
+          password: req.body.newPassword,
+        },
+        {
+          where: {
+            id,
+          },
+        }
+      );
+
+      res.send({
+        msg: 'Contraseña Actualizada.',
       });
     } catch (error) {
       next(error);
