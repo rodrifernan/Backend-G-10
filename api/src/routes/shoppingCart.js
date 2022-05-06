@@ -41,21 +41,42 @@ router.get('/', loginVerification, async (req, res, next) => {
 router.post('/', loginVerification, async (req, res, next) => {
   try {
     const { id: userId } = req.user;
+    const { productId, quantity } = req.body;
 
-    await ShoppingCart.destroy({ where: { userId } });
-
-    req.body.forEach(async ({ quantity, productId }) => {
-      await ShoppingCart.create({
-        userId,
-        quantity,
-        productId,
-      });
+    await ShoppingCart.create({
+      userId,
+      productId,
+      quantity,
     });
 
     res.status(201).send({ type: 'success', msg: 'Successfully created' });
   } catch (error) {
     next(error);
   }
+});
+
+router.delete('/', loginVerification, async (req, res, next) => {
+  try {
+    const { id: userId } = req.user;
+    const { id } = req.body;
+
+    await ShoppingCart.destroy({ where: { userId, id } });
+
+    res.status(200).send({ type: 'success', msg: 'Successfully delete' });
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.put('/', loginVerification, async (req, res, next) => {
+  try {
+    const { id: userId } = req.user;
+    const { id, quantity } = req.body;
+
+    await ShoppingCart.update({ quantity }, { where: { userId, id } });
+
+    res.status(200).send({ type: 'success', msg: 'Successfully update' });
+  } catch (error) {}
 });
 
 module.exports = router;
