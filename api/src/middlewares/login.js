@@ -5,7 +5,12 @@ const loginVerification = async (req, res, next) => {
   try {
     req.user = jwt.verify(req.header('auth-token'), process.env.TOKEN_SECRET);
 
-    const user = await await User.findByPk(req.user.id, { attributes: ['id'] });
+    const user = await await User.findByPk(req.user.id, { attributes: ['id', 'banned'] });
+
+    if(user.banned) return res.status(401).send({
+      type: 'banned',
+      msg: 'Acceso denegado.',
+    })
 
     if (user) return next();
     res.status(500).send({ msg: 'Invalid login' });

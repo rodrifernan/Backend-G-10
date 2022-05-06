@@ -5,7 +5,7 @@ const { body, validationResult } = require('express-validator');
 const bcrypt = require('bcrypt');
 const { User } = require('../db'); // traer mi modelo
 const router = Router();
-const {loginVerification} = require('../middlewares/login');
+const { loginVerification } = require('../middlewares/login');
 //Validators
 const loginValidator = [
   body('userOrEmail').not().isEmpty().withMessage('Este campo es obligatorio.'),
@@ -41,23 +41,25 @@ router.post('/', loginValidator, async (req, res) => {
     },
   });
 
+  if (user.banned)
+    return res.status(401).send({
+      type: 'banned',
+      msg: 'Acceso denegado.',
+    });
+
   if (!user)
-    return res
-      .status(401)
-      .send({
-        type: 'noLogin',
-        msg: 'No se pudieron comprobar sus credenciales.',
-      });
+    return res.status(401).send({
+      type: 'noLogin',
+      msg: 'No se pudieron comprobar sus credenciales.',
+    });
 
   const validPassword = await bcrypt.compare(password, user.password);
 
   if (!validPassword)
-    return res
-      .status(401)
-      .json({
-        type: 'noLogin',
-        msg: 'No se pudieron comprobar sus credenciales.',
-      });
+    return res.status(401).json({
+      type: 'noLogin',
+      msg: 'No se pudieron comprobar sus credenciales.',
+    });
 
   res.send(successLogin(user));
 });
@@ -86,6 +88,5 @@ router.post('/google', async (req, res, next) => {
     next(error);
   }
 });
-
 
 module.exports = router;

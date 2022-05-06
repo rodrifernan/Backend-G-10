@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 const { body, validationResult } = require('express-validator');
 const { User } = require('../db'); // traer mi modelo
 const router = Router();
-const { loginVerification } = require('../middlewares/login');
+const { loginVerification, rootVerification } = require('../middlewares/login');
 // Validators
 
 const userValidators = [
@@ -205,5 +205,21 @@ router.post(
     }
   }
 );
+
+router.post('/ban', rootVerification, async (req, res, next) => {
+  try {
+    const { userId } = req.body;
+    const user = await User.findByPk(userId);
+
+    await User.update(
+      { banned: user.banned ? false : true },
+      { where: { id: userId } }
+    );
+
+    res.sendStatus(200);
+  } catch (error) {
+    next(error);
+  }
+});
 
 module.exports = router;
