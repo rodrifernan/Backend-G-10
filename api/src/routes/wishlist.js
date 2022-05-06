@@ -41,17 +41,27 @@ router.get('/', loginVerification, async (req, res, next) => {
 router.post('/', loginVerification, async (req, res, next) => {
   try {
     const { id: userId } = req.user;
+    const { productId } = req.body;
 
-    await Wishlist.destroy({ where: { userId } });
-
-    req.body.forEach(async ({ productId }) => {
-      await Wishlist.create({
-        userId,
-        productId,
-      });
+    await Wishlist.create({
+      userId,
+      productId,
     });
 
     res.status(201).send({ type: 'success', msg: 'Successfully created' });
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.delete('/', loginVerification, async (req, res, next) => {
+  try {
+    const { id: userId } = req.user;
+    const { id } = req.body;
+
+    await Wishlist.destroy({ where: { userId, id } });
+
+    res.send({ type: 'success', msg: 'Successfully deleted' });
   } catch (error) {
     next(error);
   }
