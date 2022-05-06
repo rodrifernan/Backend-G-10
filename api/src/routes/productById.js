@@ -22,7 +22,7 @@ router.get("/", async (req, res, next) => {
     let aux = await getAllProduct(getAllBdProduct);
  
 
-    const filter = aux.filter((e) => e.id === id);
+    const filter = aux.filter((e) => e.id === parseInt(id));
 
     return res.send(filter);
   } catch (error) {
