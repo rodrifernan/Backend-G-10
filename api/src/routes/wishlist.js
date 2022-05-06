@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const { Wishlist, Product } = require('../db'); // traer mi modelo
-const loginVerification = require('../middlewares/loginVerification');
+const {loginVerification} = require('../middlewares/login');
 const router = Router();
 
 // Validators

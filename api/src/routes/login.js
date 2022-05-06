@@ -5,7 +5,7 @@ const { body, validationResult } = require('express-validator');
 const bcrypt = require('bcrypt');
 const { User } = require('../db'); // traer mi modelo
 const router = Router();
-const loginVerification = require('../middlewares/loginVerification');
+const {loginVerification} = require('../middlewares/login');
 //Validators
 const loginValidator = [
   body('userOrEmail').not().isEmpty().withMessage('Este campo es obligatorio.'),

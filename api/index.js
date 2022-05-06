@@ -20,29 +20,30 @@
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
 
-
-const categoryMockUp = require("./json/categories");
-const productMockUp = require("./json/products");
-const reviewMockUp = require("./json/reviews");
-const usersMockUp = require("./json/users");
-const rolesMockUp = require("./json/roles");
-const shoppingCartMockUp = require("./json/shoppingCart");
-const wishlistCartMockUp = require("./json/wishlist");
+const categoryMockUp = require('./json/categories');
+const productMockUp = require('./json/products');
+const reviewMockUp = require('./json/reviews');
+const usersMockUp = require('./json/users');
+const rolesMockUp = require('./json/roles');
+const shoppingCartMockUp = require('./json/shoppingCart');
+const wishlistCartMockUp = require('./json/wishlist');
+const orderMockUp = require('./json/orders');
 
 // Syncing all the models at once.
-conn.sync({ force: true })
-.then(async() => {
+conn
+  .sync({ force: true })
+  .then(async () => {
+    await categoryMockUp();
+    await productMockUp();
+    await reviewMockUp();
+    await rolesMockUp();
+    await usersMockUp();
+    await shoppingCartMockUp();
+    await wishlistCartMockUp();
+    await orderMockUp();
 
-  await categoryMockUp();
-  await productMockUp();
-  await reviewMockUp();
-  await rolesMockUp();
-  await usersMockUp();
-  await shoppingCartMockUp();
-  await wishlistCartMockUp();
-
-  await server.listen(3001, () => {
-    console.log('%s listening at 3001'); // eslint-disable-line no-console
-  });
-})
-.catch((e) => console.log(e.message));
+    await server.listen(3001, () => {
+      console.log('%s listening at 3001'); // eslint-disable-line no-console
+    });
+  })
+  .catch(e => console.log(e.message));

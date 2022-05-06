@@ -1,9 +1,9 @@
 const { DataTypes } = require('sequelize');
 // Exportamos una funcion que define el modelo
 // Luego le injectamos la conexion a sequelize.
-module.exports = (sequelize) => {
+module.exports = sequelize => {
   // defino el modelo
-  sequelize.define("order", {
+  sequelize.define('order', {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -11,24 +11,33 @@ module.exports = (sequelize) => {
       primaryKey: true,
     },
     orderNumber: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.VIRTUAL,
+      get() {
+        return this.id;
+      },
     },
 
     orderDate: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.DATE,
+      defaultValue: Date.now,
     },
 
-    status:{
-        type: DataTypes.STRING,
+    status: {
+      type: DataTypes.STRING,
     },
 
     purchased: {
-        type: DataTypes.BOOLEAN,
+      type: DataTypes.BOOLEAN,
     },
 
-    user_id:{
-        type: DataTypes.INTEGER,
-        allowNull: false,  
-    }
+    quantity: {
+      type: DataTypes.INTEGER,
+      allNull: false,
+    },
+
+    total: {
+      type: DataTypes.FLOAT,
+      allNull: false,
+    },
   });
 };

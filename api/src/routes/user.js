@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 const { body, validationResult } = require('express-validator');
 const { User } = require('../db'); // traer mi modelo
 const router = Router();
-const loginVerification = require('../middlewares/loginVerification');
+const { loginVerification } = require('../middlewares/login');
 // Validators
 
 const userValidators = [
