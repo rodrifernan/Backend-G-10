@@ -80,7 +80,7 @@ router.post('/google', async (req, res, next) => {
       password: '',
       address: '',
       idPersonal: '',
-      roleId: '29755ab4-c30a-4606-931a-c7362d0fd7f8',
+      roleId: 'ad114fef-1e85-4dd7-af41-a252935b4e43',
     });
 
     res.send(successLogin(newUser));

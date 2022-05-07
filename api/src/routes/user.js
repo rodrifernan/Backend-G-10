@@ -83,7 +83,8 @@ const userValidators = [
 
   body('banned').default(false).isBoolean(),
   body('address').not().isEmpty().withMessage('Este campo es obligatorio.'),
-  body('roleId').not().isEmpty().withMessage('Este campo es obligatorio.'),
+  body('roleId').default('29755ab4-c30a-4606-931a-c7362d0fd7f8'),
+  body('idPersonal').not().isEmpty().withMessage('Este campo es obligatorio.'),
 ];
 
 /* #### Backend
@@ -92,7 +93,7 @@ const userValidators = [
 router.post('/', userValidators, async (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
-    return res.status(400).json({ errors: errors.array() });
+    return res.status(400).send({ errors: errors.array() });
   }
   try {
     await User.create({
