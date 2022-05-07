@@ -364,7 +364,7 @@ const productMockUp = async () => {
       Material: Terciopelo, mezcla de algodón y poliester.',
 
       // brand: 1,
-      categoryId: 'c7f056b7-38e9-442f-865e-00e79be4fb64',
+      categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a484',
       reviewsId: 1,
       genresId: 3,
     });
@@ -391,7 +391,7 @@ const productMockUp = async () => {
       Adecuado para entrenamiento o como forro para la cama del perrito.',
 
       // brand: 1,
-      categoryId: 'c7f056b7-38e9-442f-865e-00e79be4fb64',
+      categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a484',
       reviewsId: 1,
       genresId: 3,
     });
@@ -416,7 +416,7 @@ const productMockUp = async () => {
       - Franjas de material reflectivo.',
 
       // brand: 1,
-      categoryId: 'c7f056b7-38e9-442f-865e-00e79be4fb64',
+      categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a484',
       reviewsId: 1,
       genresId: 3,
     });
@@ -447,7 +447,7 @@ const productMockUp = async () => {
       Talla 2XL: Bulldog inglés, labrador, etc.',
 
       // brand: 1,
-      categoryId: 'c7f056b7-38e9-442f-865e-00e79be4fb64',
+      categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a484',
       reviewsId: 1,
       genresId: 3,
     });
@@ -480,7 +480,7 @@ const productMockUp = async () => {
       Los pedales ajustables de la bicicleta protegen un uso rápido. Las ruedas te ayudan a mover fácilmente esta máquina de ciclo.',
 
       // brand: 1,
-      categoryId: 'c7f056b7-38e9-442f-865e-00e79be4fb63',
+      categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a483',
       reviewsId: 1,
       genresId: 3,
     });
@@ -537,7 +537,7 @@ const productMockUp = async () => {
       para ser utilizado para mejorar: fitness, músculos, reducción de peso',
 
       // brand: 1,
-      categoryId: 'c7f056b7-38e9-442f-865e-00e79be4fb63',
+      categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a483',
       reviewsId: 1,
       genresId: 3,
     });
@@ -567,7 +567,7 @@ const productMockUp = async () => {
       • 6 modos de estimulación, 4 intensidades',
 
       // brand: 1,
-      categoryId: 'c7f056b7-38e9-442f-865e-00e79be4fb63',
+      categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a483',
       reviewsId: 1,
       genresId: 3,
     });
@@ -601,7 +601,7 @@ const productMockUp = async () => {
       Lista de embalaje y embalaje: 1 x Junta push-up 2 x Mango antideslizante de silicona.',
 
       // brand: 1,
-      categoryId: 'c7f056b7-38e9-442f-865e-00e79be4fb63',
+      categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a483',
       reviewsId: 1,
       genresId: 3,
     });
