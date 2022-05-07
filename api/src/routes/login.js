@@ -41,16 +41,16 @@ router.post('/', loginValidator, async (req, res) => {
     },
   });
 
-  if (user.banned)
-    return res.status(401).send({
-      type: 'banned',
-      msg: 'Acceso denegado.',
-    });
-
   if (!user)
     return res.status(401).send({
       type: 'noLogin',
       msg: 'No se pudieron comprobar sus credenciales.',
+    });
+
+  if (user.banned)
+    return res.status(401).send({
+      type: 'banned',
+      msg: 'Acceso denegado.',
     });
 
   const validPassword = await bcrypt.compare(password, user.password);
