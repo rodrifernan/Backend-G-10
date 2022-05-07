@@ -20,26 +20,29 @@
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
 
-const categoryMockUp = require('./json/categories');
-const productMockUp = require('./json/products');
-const reviewMockUp = require('./json/reviews');
-const usersMockUp = require('./json/users');
-const rolesMockUp = require('./json/roles');
+const categoryMockUp     = require('./json/categories');
+const productMockUp      = require('./json/products');
+const usersMockUp        = require('./json/users');
+const rolesMockUp        = require('./json/roles');
 const shoppingCartMockUp = require('./json/shoppingCart');
 const wishlistCartMockUp = require('./json/wishlist');
-const orderMockUp = require('./json/orders');
+const orderMockUp        = require('./json/orders');
+const genreMockUp        = require('./json/genre');
+const reviewsMockUp      = require('./json/reviews');
+
 
 // Syncing all the models at once.
 conn
   .sync({ force: true })
   .then(async () => {
-    await categoryMockUp();
-    await productMockUp();
-    await reviewMockUp();
     await rolesMockUp();
     await usersMockUp();
-    await shoppingCartMockUp();
+    await genreMockUp();
+    await reviewsMockUp();
+    await categoryMockUp();
+    await productMockUp();
     await wishlistCartMockUp();
+    await shoppingCartMockUp();
     await orderMockUp();
 
     await server.listen(3001, () => {

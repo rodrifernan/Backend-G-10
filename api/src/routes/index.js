@@ -11,6 +11,9 @@ const shoppingCart = require('./shoppingCart');
 const wishlist = require('./wishlist');
 const productById = require('./productById');
 const orders = require('./orders');
+const checkout       = require('./checkout');   // chequear pago
+const paymentIdPM    = require('./paymentIdPM');  // buscar la orden de pago compra ver items
+const editProduct    = require('./editProduct');  // buscar la orden de pago compra ver items
 
 // mildelword
 const router = Router();
@@ -29,5 +32,9 @@ router.use('/shoppingCart', shoppingCart);
 router.use('/wishlist', wishlist);
 router.use('/productId', productById);
 router.use('/orders', orders);
+router.use('/checkout', checkout);
+router.use('/paymentIdPM', paymentIdPM);
+router.use('/editProduct', editProduct);
+
 
 module.exports = router;

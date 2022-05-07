@@ -12,7 +12,7 @@ const usersMockUp = async () => {
       phone: '+51 987654654',
       email: 'junito@gmail.com',
       address: 'Calle luna',
-      roleId: 'ad114fef-1e85-4dd7-af41-a252935b4e48',
+      roleId: 'ad114fef-1e85-4dd7-af41-a252935b4e43',
       idPersonal: '87653221',
     });
 
@@ -25,7 +25,7 @@ const usersMockUp = async () => {
       phone: '+51 978654154',
       email: 'leidy@gmail.com',
       address: 'Calle luna',
-      roleId: '3ad49ae2-8867-4b42-8b58-ac35b61ca403',
+      roleId: 'ad114fef-1e85-4dd7-af41-a252935b4e42',
       idPersonal: '87653221',
     });
 
@@ -38,7 +38,7 @@ const usersMockUp = async () => {
       phone: '+51 875454369',
       email: 'Johannes@gmail.com',
       address: 'Calle luna',
-      roleId: '3ad49ae2-8867-4b42-8b58-ac35b61ca403',
+      roleId: 'ad114fef-1e85-4dd7-af41-a252935b4e41',
       idPersonal: '87653221',
     });
   } catch (err) {

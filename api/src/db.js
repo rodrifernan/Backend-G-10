@@ -52,11 +52,6 @@ const {
 Role.hasOne(User);
 User.belongsTo(Role);
 
-//usuario/ordenes 1-*
-// se añade una clave user_id a la tabla order
-User.hasMany(Order);
-Order.belongsTo(User);
-
 //orde/product */1
 Product.hasMany(Order);
 Order.belongsTo(Product);
@@ -66,29 +61,37 @@ Order.belongsTo(Product);
 Category.hasMany(Product);
 Product.belongsTo(Category);
 
-//User/ShoppingCart 1-*
-User.hasOne(ShoppingCart);
-ShoppingCart.belongsTo(User);
 
-//User/ShoppingCart 1-*
-Product.hasMany(ShoppingCart);
-ShoppingCart.belongsTo(Product);
-
-//product/review
-Product.hasMany(Reviews);
-Reviews.belongsTo(Product);
-
-//user/product *-*
-User.hasOne(Wishlist);
-Wishlist.belongsTo(User);
-
-//wishlist/product *-*
-Product.hasMany(Wishlist);
-Wishlist.belongsTo(Product);
-
-//genre/product 1-*
+// //genre/product 1-*
 Genre.hasMany(Product);
 Product.belongsTo(Genre);
+
+//usuario/ordenes 1-*
+// se añade una clave user_id a la tabla order
+User.hasMany(Order);
+Order.belongsTo(User);
+
+// //User/ShoppingCart 1-*
+ User.hasOne(ShoppingCart);
+ ShoppingCart.belongsTo(User);
+
+// //User/ShoppingCart 1-*
+ Product.hasMany(ShoppingCart);
+ ShoppingCart.belongsTo(Product);
+
+// // //product/review
+   Product.hasMany(Reviews);
+   Reviews.belongsTo(Product);
+
+// // // //user/product *-*
+   User.hasOne(Wishlist);
+   Wishlist.belongsTo(User);
+
+// // //wishlist/product *-*
+//   Product.hasMany(Wishlist);
+//   Wishlist.belongsTo(Product);
+
+
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');

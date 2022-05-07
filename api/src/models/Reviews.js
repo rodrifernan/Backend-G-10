@@ -4,15 +4,15 @@ const { DataTypes } = require('sequelize');
 module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('reviews', {
-    id            : { 
+      id           : { 
       type         : DataTypes.UUID,   // tipo de datos hastach
       defaultValue : DataTypes.UUIDV4, // genera automaticamente un UUIDV4
       primaryKey   : true,             // definir que va hacer mi clave primaria
-      allowNull    : false,},
+      allowNull    : false,},    
 
     rating: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
       
     },
     comment: {
