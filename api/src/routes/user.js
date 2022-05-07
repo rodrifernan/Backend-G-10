@@ -1,9 +1,10 @@
 const { Router } = require('express');
 const bcrypt = require('bcrypt');
 const { body, validationResult } = require('express-validator');
-const { User } = require('../db'); // traer mi modelo
+const { User, Role } = require('../db'); // traer mi modelo
 const router = Router();
 const { loginVerification, rootVerification } = require('../middlewares/login');
+const { Op } = require('sequelize');
 // Validators
 
 const userValidators = [
@@ -205,6 +206,30 @@ router.post(
     }
   }
 );
+
+router.get('/all', rootVerification, async (req, res, next) => {
+  try {
+    const users = await User.findAll({
+      where: {
+        [Op.not]: { roleId: 'ad114fef-1e85-4dd7-af41-a252935b4e48' },
+      },
+
+      attributes: {
+        exclude: ['updatedAt'],
+      },
+      include: {
+        model: Role,
+        attributes: {
+          exclude: ['createdAt', 'updatedAt'],
+        },
+      },
+    }).then(data => data.map(({ dataValues }) => ({ ...dataValues })));
+
+    res.send(users);
+  } catch (error) {
+    next(error);
+  }
+});
 
 router.post('/ban', rootVerification, async (req, res, next) => {
   try {
