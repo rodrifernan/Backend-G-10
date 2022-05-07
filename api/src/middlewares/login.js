@@ -9,7 +9,7 @@ const loginVerification = async (req, res, next) => {
       attributes: ['id', 'banned'],
     });
 
-    if (user.banned)
+    if (user?.banned)
       return res.status(401).send({
         type: 'banned',
         msg: 'Acceso denegado.',
@@ -32,7 +32,7 @@ const rootVerification = async (req, res, next) => {
       attributes: ['roleId'],
     });
 
-    if (user && user.roleId === 'ad114fef-1e85-4dd7-af41-a252935b4e48')
+    if (user && user.roleId === 'ad114fef-1e85-4dd7-af41-a252935b4e41')
       return next();
     res.status(401).send({ msg: 'Invalid login' });
   } catch (err) {
