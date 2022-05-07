@@ -30,7 +30,7 @@ const productMockUp = async () => {
       INCLUYE GEL PARA CEJAS',
       // rating: 0,
       // brand: 1,
-      categoryId: 2,
+      categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a481',
       reviewsId:1,
       genresId:1,
     });
@@ -55,7 +55,7 @@ const productMockUp = async () => {
       INCLUYE + GEL PARA CEJAS',
       // rating: 0,
       // brand: 1,
-      categoryId: 2,
+      categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a482',
       reviewsId:1,
       genresId:1,
     });
@@ -99,7 +99,7 @@ const productMockUp = async () => {
       Colores disponibles: Plateado, Negro (consultar previamente)',
       // rating: 0,
       // brand: 1,
-      categoryId: 2,
+      categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a482',
       reviewsId:1,
       genresId:3,
     });
@@ -123,7 +123,7 @@ const productMockUp = async () => {
       Cantidad: 6 Unidades (3 pares) + Extractor de piezas',
       // rating: 0,
       // brand: 1,
-      categoryId: 2,
+      categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a482',
       reviewsId:1,
       genresId:3,
     });
@@ -159,7 +159,7 @@ const productMockUp = async () => {
       1 x Xiaomi Redmi Power Bank 20000 mAh 18W Carga rápida',
       // rating: 0,
       // brand: 1,
-      categoryId: 1,
+      categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a481',
       reviewsId:1,
       genresId:3,
     });
@@ -193,7 +193,7 @@ const productMockUp = async () => {
       • Caja de aluminio',
      
       // brand: 1,
-      categoryId: 1,
+      categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a481',
       reviewsId:1,
       genresId:3,
     });
@@ -227,7 +227,7 @@ const productMockUp = async () => {
       Estuche: 470 mAh',
      
       // brand: 1,
-      categoryId: 1,
+      categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a481',
       reviewsId:1,
       genresId:3,
     });
@@ -260,7 +260,7 @@ const productMockUp = async () => {
       - Dimensiones: 9.2 x 3 x 1.5 cm',
      
       // brand: 1,
-      categoryId: 1,
+      categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a481',
       reviewsId:1,
       genresId:3,
     });
@@ -298,18 +298,10 @@ const productMockUp = async () => {
       • Disponible en color oro, color plata y gris espacial',
      
       // brand: 1,
-      categoryId: 1,
+      categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a481',
       reviewsId:1,
       genresId:3,
     });
-
-
-
-
-
-
-
-
 
 
     // *******************************PETS****************************
@@ -341,7 +333,7 @@ const productMockUp = async () => {
       - Transpirable',
      
       // brand: 1,
-      categoryId: 4,
+      categoryId: 'c7f056b7-38e9-442f-865e-00e79be4fb64',
       reviewsId:1,
       genresId:3,
     });
@@ -366,7 +358,7 @@ const productMockUp = async () => {
       Material: Terciopelo, mezcla de algodón y poliester.',
      
       // brand: 1,
-      categoryId: 4,
+      categoryId: 'c7f056b7-38e9-442f-865e-00e79be4fb64',
       reviewsId:1,
       genresId:3,
     });
@@ -393,7 +385,7 @@ const productMockUp = async () => {
       Adecuado para entrenamiento o como forro para la cama del perrito.',
      
       // brand: 1,
-      categoryId: 4,
+      categoryId: 'c7f056b7-38e9-442f-865e-00e79be4fb64',
       reviewsId:1,
       genresId:3,
     });
@@ -418,7 +410,7 @@ const productMockUp = async () => {
       - Franjas de material reflectivo.',
      
       // brand: 1,
-      categoryId: 4,
+      categoryId: 'c7f056b7-38e9-442f-865e-00e79be4fb64',
       reviewsId:1,
       genresId:3,
     });
@@ -449,31 +441,13 @@ const productMockUp = async () => {
       Talla 2XL: Bulldog inglés, labrador, etc.',
      
       // brand: 1,
-      categoryId: 4,
+      categoryId: 'c7f056b7-38e9-442f-865e-00e79be4fb64',
       reviewsId:1,
       genresId:3,
     });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     // ************************************SPORT*******************************
-
-
     await Product.create({
       name: "Bicicleta de spinning",
       price: 420,
@@ -502,7 +476,7 @@ const productMockUp = async () => {
       Los pedales ajustables de la bicicleta protegen un uso rápido. Las ruedas te ayudan a mover fácilmente esta máquina de ciclo.',
      
       // brand: 1,
-      categoryId: 3,
+      categoryId: 'c7f056b7-38e9-442f-865e-00e79be4fb63',
       reviewsId:1,
       genresId:3,
     });
@@ -562,7 +536,7 @@ const productMockUp = async () => {
       para ser utilizado para mejorar: fitness, músculos, reducción de peso',
      
       // brand: 1,
-      categoryId: 3,
+      categoryId: 'c7f056b7-38e9-442f-865e-00e79be4fb63',
       reviewsId:1,
       genresId:3,
     });
@@ -593,7 +567,7 @@ const productMockUp = async () => {
       • 6 modos de estimulación, 4 intensidades',
      
       // brand: 1,
-      categoryId: 3,
+      categoryId: 'c7f056b7-38e9-442f-865e-00e79be4fb63',
       reviewsId:1,
       genresId:3,
     });
@@ -628,18 +602,10 @@ const productMockUp = async () => {
       Lista de embalaje y embalaje: 1 x Junta push-up 2 x Mango antideslizante de silicona.',
      
       // brand: 1,
-      categoryId: 3,
+      categoryId: 'c7f056b7-38e9-442f-865e-00e79be4fb63',
       reviewsId:1,
       genresId:3,
     });
-
-
-
-
-
-
-
-
 
    
   } catch (e) {
