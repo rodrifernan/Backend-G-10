@@ -4,7 +4,7 @@ const { DataTypes } = require('sequelize');
 module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('reviews', {
-    id            : { // id o clave del Dog
+    id            : { 
       type         : DataTypes.UUID,   // tipo de datos hastach
       defaultValue : DataTypes.UUIDV4, // genera automaticamente un UUIDV4
       primaryKey   : true,             // definir que va hacer mi clave primaria

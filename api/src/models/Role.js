@@ -5,12 +5,11 @@ module.exports = sequelize => {
   // defino el modelo
 
   sequelize.define("role", {
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      autoIncrement: true,
-      primaryKey: true,
-    },
+    id            : { 
+      type         : DataTypes.UUID,   // tipo de datos hastach
+      defaultValue : DataTypes.UUIDV4, // genera automaticamente un UUIDV4
+      primaryKey   : true,             // definir que va hacer mi clave primaria
+      allowNull    : false,},
 
     title: {
       type: DataTypes.STRING,
