@@ -66,17 +66,47 @@ router.post('/', loginValidator, async (req, res) => {
 
 router.post('/google', async (req, res, next) => {
   try {
-    const userData = req.body;
+    const {
+      name: userName,
+      givenName: firstName,
+      familyName: lastName,
+      email,
+    } = req.body;
 
-    const user = await User.findOne({ where: { email: userData.email } });
+    const user = await User.findOne({ where: { email } });
 
     if (user) return res.send(successLogin(user));
 
     const newUser = await User.create({
-      userName: userData.name,
-      firstName: userData.givenName,
-      lastName: userData.familyName,
-      email: userData.email,
+      userName,
+      firstName,
+      lastName,
+      email,
+      password: '',
+      address: '',
+      idPersonal: '',
+      roleId: 'ad114fef-1e85-4dd7-af41-a252935b4e43',
+    });
+
+    res.send(successLogin(newUser));
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.post('/facebook', async (req, res, next) => {
+  try {
+    const { name: userName, email } = req.body;
+
+    const user = await User.findOne({ where: { email } });
+
+    if (user) return res.send(successLogin(user));
+
+    const newUser = await User.create({
+      userName,
+      firstName: '',
+      lastName: '',
+      email,
       password: '',
       address: '',
       idPersonal: '',
