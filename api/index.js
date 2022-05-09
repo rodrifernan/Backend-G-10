@@ -45,7 +45,7 @@ conn
     await shoppingCartMockUp();
     await orderMockUp();
 
-    await server.listen(3001, () => {
+    await server.listen(process.env.PORT, () => {
       console.log('%s listening at 3001'); // eslint-disable-line no-console
     });
   })
