@@ -83,7 +83,7 @@ const userValidators = [
 
   body('banned').default(false).isBoolean(),
   body('address').not().isEmpty().withMessage('Este campo es obligatorio.'),
-  body('roleId').default('29755ab4-c30a-4606-931a-c7362d0fd7f8'),
+  body('roleId').default('ad114fef-1e85-4dd7-af41-a252935b4e43'),
   body('idPersonal').not().isEmpty().withMessage('Este campo es obligatorio.'),
 ];
 
@@ -101,7 +101,7 @@ router.post('/', userValidators, async (req, res, next) => {
       password: bcrypt.hashSync(req.body.password, 10),
     });
 
-    return res.status(201).send({ msg: 'Registro Completo' });
+    return res.status(201).send({ success: true, msg: 'Registro Completo' });
   } catch (error) {
     next(error);
   }
