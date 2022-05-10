@@ -11,6 +11,11 @@ module.exports = sequelize => {
       allowNull: false,
     },
 
+    invoiceNumber: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+    },
+
     total: {
       type: DataTypes.FLOAT,
     },
