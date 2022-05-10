@@ -4,16 +4,15 @@ const { DataTypes } = require('sequelize');
 module.exports = sequelize => {
   // defino el modelo
   sequelize.define('order', {
-    id            : { 
-      type         : DataTypes.UUID,   // tipo de datos hastach
-      defaultValue : DataTypes.UUIDV4, // genera automaticamente un UUIDV4
-      primaryKey   : true,             // definir que va hacer mi clave primaria
-      allowNull    : false,},
+    id: {
+      type: DataTypes.UUID, // tipo de datos hastach
+      defaultValue: DataTypes.UUIDV4, // genera automaticamente un UUIDV4
+      primaryKey: true, // definir que va hacer mi clave primaria
+      allowNull: false,
+    },
     orderNumber: {
-      type: DataTypes.VIRTUAL,
-      get() {
-        return this.id;
-      },
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
     },
 
     orderDate: {
@@ -23,6 +22,7 @@ module.exports = sequelize => {
 
     status: {
       type: DataTypes.STRING,
+      defaultValue: 'Recepción',
     },
 
     purchased: {
@@ -37,6 +37,15 @@ module.exports = sequelize => {
     total: {
       type: DataTypes.FLOAT,
       allNull: false,
+    },
+    discount: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+
+    unitPrice: {
+      type: DataTypes.FLOAT,
+      allowNull: false,
     },
   });
 };

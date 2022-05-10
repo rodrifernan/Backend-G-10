@@ -77,4 +77,15 @@ router.delete('/', loginVerification, async (req, res, next) => {
   }
 });
 
+router.put('/', loginVerification, async (req, res, next) => {
+  try {
+    const { id: userId } = req.user;
+    const { id, quantity } = req.body;
+
+    await ShoppingCart.update({ quantity }, { where: { userId, id } });
+
+    res.status(200).send({ type: 'success', msg: 'Successfully update' });
+  } catch (error) {}
+});
+
 module.exports = router;

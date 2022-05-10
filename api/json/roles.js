@@ -7,14 +7,10 @@ const rolesMockUp = async () => {
       id: 'ad114fef-1e85-4dd7-af41-a252935b4e41',
       title: 'root',
     });
-    await Role.create({
-      id: 'ad114fef-1e85-4dd7-af41-a252935b4e42',
-      title: 'user',
-    });
 
     await Role.create({
       id: 'ad114fef-1e85-4dd7-af41-a252935b4e43',
-      title: 'client',
+      title: 'user',
     });
   } catch (err) {
     console.log(err.message);
