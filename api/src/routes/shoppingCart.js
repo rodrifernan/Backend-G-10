@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const { ShoppingCart, Product } = require('../db'); // traer mi modelo
-const {loginVerification} = require('../middlewares/login');
+const { loginVerification } = require('../middlewares/login');
 const router = Router();
 
 // Validators
@@ -41,15 +41,24 @@ router.get('/', loginVerification, async (req, res, next) => {
 router.post('/', loginVerification, async (req, res, next) => {
   try {
     const { id: userId } = req.user;
-    const { productId, quantity } = req.body;
+    const { productId } = req.body;
 
-    await ShoppingCart.create({
-      userId,
-      productId,
-      quantity,
+    const product = await ShoppingCart.findOne({
+      where: { userId, productId },
     });
 
-    res.status(201).send({ type: 'success', msg: 'Successfully created' });
+    if (product) {
+      await product.update({ quantity: product.quantity + 1 });
+      await product.save();
+    } else {
+      await ShoppingCart.create({
+        userId,
+        productId,
+        quantity: 1,
+      });
+    }
+
+    res.status(201).send({ type: 'success', msg: 'Successfully' });
   } catch (error) {
     next(error);
   }
@@ -66,17 +75,6 @@ router.delete('/', loginVerification, async (req, res, next) => {
   } catch (error) {
     next(error);
   }
-});
-
-router.put('/', loginVerification, async (req, res, next) => {
-  try {
-    const { id: userId } = req.user;
-    const { id, quantity } = req.body;
-
-    await ShoppingCart.update({ quantity }, { where: { userId, id } });
-
-    res.status(200).send({ type: 'success', msg: 'Successfully update' });
-  } catch (error) {}
 });
 
 module.exports = router;
