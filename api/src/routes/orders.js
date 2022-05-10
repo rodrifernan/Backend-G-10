@@ -55,6 +55,44 @@ router.get('/all', rootVerification, async (req, res, next) => {
   }
 });
 
+router.post('/', loginVerification, async (req, res, next) => {
+  try {
+    const { id: userId } = req.user;
+    const { id } = req.body;
+
+    const shoppingCart = await ShoppingCart.findByPk(id, {
+      attributes: {
+        exclude: ['createdAt', 'updatedAt', 'userId'],
+      },
+      include: {
+        model: Product,
+        attributes: {
+          exclude: ['createdAt', 'updatedAt', 'reviewsId'],
+        },
+      },
+    }).then(({ dataValues }) => {
+      const item = { ...dataValues, ...dataValues.product.dataValues };
+      delete item.product;
+      return item;
+    });
+
+    const { discount, quantity, productId, price } = shoppingCart;
+
+    await Order.create({
+      total: quantity * (price - (price * discount) / 100),
+      quantity,
+      discount,
+      productId,
+      userId,
+      unitPrice: price,
+    });
+
+    res.sendStatus(201);
+  } catch (error) {
+    next(error);
+  }
+});
+
 router.get('/checkout', loginVerification, async (req, res, next) => {
   try {
     const { id: userId } = req.user;

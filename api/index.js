@@ -20,16 +20,16 @@
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
 
-const categoryMockUp     = require('./json/categories');
-const productMockUp      = require('./json/products');
-const usersMockUp        = require('./json/users');
-const rolesMockUp        = require('./json/roles');
+const categoryMockUp = require('./json/categories');
+const productMockUp = require('./json/products');
+const usersMockUp = require('./json/users');
+const rolesMockUp = require('./json/roles');
 const shoppingCartMockUp = require('./json/shoppingCart');
 const wishlistCartMockUp = require('./json/wishlist');
-const orderMockUp        = require('./json/orders');
-const genreMockUp        = require('./json/genre');
-const reviewsMockUp      = require('./json/reviews');
-
+const orderMockUp = require('./json/orders');
+const genreMockUp = require('./json/genre');
+const reviewsMockUp = require('./json/reviews');
+const invoicesMockUp = require('./json/invoices');
 
 // Syncing all the models at once.
 conn
@@ -43,6 +43,7 @@ conn
     await productMockUp();
     await wishlistCartMockUp();
     await shoppingCartMockUp();
+    await invoicesMockUp();
     await orderMockUp();
 
     await server.listen(process.env.PORT, () => {
