@@ -90,12 +90,14 @@ router.get('/:userId', async (req, res, next) => {
   }).then(data =>
     data.map(({ dataValues }) => ({
       title: dataValues.product.dataValues.name,
-      unit_price: dataValues.product.dataValues.price,
+      unit_price:
+        dataValues.product.dataValues.price -
+        (dataValues.product.dataValues.price *
+          dataValues.product.dataValues.discount) /
+          100,
       quantity: dataValues.quantity,
     }))
   );
-
-  console.log(shoppingCart);
 
   let globalId = '';
   let preference = {

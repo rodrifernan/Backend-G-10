@@ -10,13 +10,10 @@ const { loginVerification } = require('../middlewares/login');
       de creación del Categorias por body
     - Creacion de Categorias en la base de datos */
 router.post('/', loginVerification, async (req, res, next) => {
-  console.log('estoy BACK POST /category ', req.body);
   try {
     const { id: userId } = req.user;
 
     const invoice = await Invoice.create();
-   
-    console.log(invoice);
 
     const shoppingCart = await ShoppingCart.findAll({
       where: {
@@ -60,7 +57,7 @@ router.post('/', loginVerification, async (req, res, next) => {
 
     await invoice.save();
 
-    res.sendStatus(201);
+    res.status(201).send({ invoiceNumber: invoice.invoiceNumber });
   } catch (error) {
     next(error);
   }
