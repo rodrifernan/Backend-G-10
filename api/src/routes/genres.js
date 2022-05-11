@@ -1,8 +1,7 @@
 const axios = require("axios");
 const { Router } = require("express");
-const { Product, Category, Reviews, Genre } = require("../db"); // traer mi modelo
+const { Genre } = require("../db"); // traer mi modelo
 const router = Router();
-const { Op } = require("sequelize");
 
 /* #### Backend 
    - [ ] GET /genres:
