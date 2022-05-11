@@ -31,6 +31,19 @@ const usersMockUp = async () => {
 
     await User.create({
       id: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45c',
+      userName: 'Leo',
+      password: bcrypt.hashSync('12345', 10),
+      firstName: 'Leo',
+      lastName: 'Merio',
+      phone: '+51 87545423',
+      email: 'Leo@gmail.com',
+      address: 'Calle luna',
+      roleId: 'ad114fef-1e85-4dd7-af41-a252935b4e43',
+      idPersonal: '87653299',
+    });
+
+    await User.create({
+      id: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45d',
       userName: 'Johannes',
       password: bcrypt.hashSync('12345', 10),
       firstName: 'Johannes',

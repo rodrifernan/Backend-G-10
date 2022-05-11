@@ -121,13 +121,13 @@ User.hasOne(Wishlist);
 Wishlist.belongsTo(User);
 
 // // //wishlist/product *-*
-//   Product.hasMany(Wishlist);
-//   Wishlist.belongsTo(Product);
 //Invoce/ordenes 1-*
 Invoice.hasMany(Order);
 Order.belongsTo(Invoice);
 
-// se añade una clave user_id a la tabla order
+//Invoce/ordenes 1-*
+User.hasMany(Product);
+Product.belongsTo(User);
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
