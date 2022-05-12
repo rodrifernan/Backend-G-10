@@ -248,4 +248,13 @@ router.post('/ban', rootVerification, async (req, res, next) => {
   }
 });
 
+router.post('/root', rootVerification, async (req, res, next) => {
+  try {
+    res.sendStatus(200);
+  } catch (error) {
+    next(error);
+  }
+});
+
+
 module.exports = router;
