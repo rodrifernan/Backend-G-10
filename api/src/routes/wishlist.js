@@ -26,7 +26,11 @@ router.get('/', loginVerification, async (req, res, next) => {
       },
     }).then(data =>
       data.map(({ dataValues }) => {
-        const item = { ...dataValues, ...dataValues.product.dataValues };
+        const productRow = dataValues.product.dataValues;
+        productRow.productId = productRow.id;
+        delete productRow.id;
+
+        const item = { ...dataValues, ...productRow };
         delete item.product;
         return item;
       })

@@ -126,6 +126,11 @@ Reviews.belongsTo(Product);
 User.hasOne(Wishlist);
 Wishlist.belongsTo(User);
 
+// // //
+Product.hasOne(Wishlist);
+Wishlist.belongsTo(Product);
+
+
 // // //wishlist/product *-*
 //Invoce/ordenes 1-*
 Invoice.hasMany(Order);

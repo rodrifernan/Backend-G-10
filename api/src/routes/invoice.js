@@ -1,8 +1,8 @@
 const { Router } = require('express');
-const { Invoice, ShoppingCart, Product, Order } = require('../db');
+const { Invoice, ShoppingCart, Product, Order, User } = require('../db');
 const router = Router();
 
-const { loginVerification } = require('../middlewares/login');
+const { loginVerification, rootVerification } = require('../middlewares/login');
 
 /* #### Backend 
     - [ ] __POST /category__:
@@ -61,6 +61,22 @@ router.post('/', loginVerification, async (req, res, next) => {
   } catch (error) {
     next(error);
   }
+});
+
+router.get('/all', rootVerification, async (req, res, next) => {
+  const allInvoices = await Invoice.findAll({
+    attributes: {
+      exclude: ['updatedAt'],
+    },
+
+    include: {
+      model: Order,
+      attributes: { exclude: ['id', 'updatedAt', 'invoiceId'] },
+      include: [{ model: Product, attributes: ['name', 'userId'] }],
+    },
+  });
+
+  res.send(allInvoices);
 });
 
 module.exports = router;
