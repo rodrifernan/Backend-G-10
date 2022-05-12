@@ -109,8 +109,14 @@ User.hasOne(ShoppingCart);
 ShoppingCart.belongsTo(User);
 
 // //User/ShoppingCart 1-*
-Product.hasMany(ShoppingCart);
-ShoppingCart.belongsTo(Product);
+ Product.hasMany(ShoppingCart);
+ ShoppingCart.belongsTo(Product);
+
+// Product.belongsToMany(ShoppingCart, {through : 'Product_ShoppingCart'});
+// ShoppingCart.belongsToMany(Product, {through : 'Product_ShoppingCart'});
+
+//belongsToMany
+
 
 // // //product/review
 Product.hasMany(Reviews);

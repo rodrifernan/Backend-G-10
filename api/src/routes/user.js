@@ -190,7 +190,7 @@ router.post(
 
       await User.update(
         {
-          password: req.body.newPassword,
+          password: bcrypt.hashSync(req.body.newPassword, 10),
         },
         {
           where: {

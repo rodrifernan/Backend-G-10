@@ -3,7 +3,7 @@ const productMockUp = async () => {
 	try {
 		// ******************************************BEAUTY***************************
 		await Product.create({
-      id: '4841011e-fbf5-4c92-a770-3b06684f5891',
+        id: '4841011e-fbf5-4c92-a770-3b06684f5891',
 			name: "Limpiador facial",
 			price: 300,
 			// newItem: false,
@@ -31,9 +31,9 @@ const productMockUp = async () => {
       INCLUYE GEL PARA CEJAS",
 			// rating: 0,
 			// brand: 1,
-			categoryId: '62cacb3c-4ef3-4d72-bbf3-d6618e45a482',
-			genreId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
-      userId  :  '69cacb3c-4ef3-4d72-bbf3-d6618e45a45b'
+			categoryId : '69cacb3c-4ef3-4d72-bbf3-d6618e45a482',
+			genresId   : '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
+            userId     :  '69cacb3c-4ef3-4d72-bbf3-d6618e45a45b'
 		});
     
 		await Product.create({
@@ -59,8 +59,8 @@ const productMockUp = async () => {
       INCLUYE + GEL PARA CEJAS",
 			// rating: 0,
 			// brand: 1,
-			categoryId: "62cacb3c-4ef3-4d72-bbf3-d6618e45a482",
-			genreId: '69cacb3c-4ef3-4d72-bbf3-d6618e450002',
+			categoryId: "69cacb3c-4ef3-4d72-bbf3-d6618e45a482",
+			genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450002',
       userId: "69cacb3c-4ef3-4d72-bbf3-d6618e45a45b"
 		});
 		await Product.create({
@@ -83,8 +83,8 @@ const productMockUp = async () => {
       Cinco niveles, adecuados para pieles diferentes.",
 			// rating: 0,
 			// brand: 1,
-			categoryId: '62cacb3c-4ef3-4d72-bbf3-d6618e45a482',
-			genreId: "69cacb3c-4ef3-4d72-bbf3-d6618e450003",
+			categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a482',
+			genresId: "69cacb3c-4ef3-4d72-bbf3-d6618e450003",
       userId: "69cacb3c-4ef3-4d72-bbf3-d6618e45a45b"
 		});
 		await Product.create({
@@ -107,8 +107,8 @@ const productMockUp = async () => {
       Colores disponibles: Plateado, Negro (consultar previamente)",
 			// rating: 0,
 			// brand: 1,
-			categoryId: '62cacb3c-4ef3-4d72-bbf3-d6618e45a482',
-			genreId: "69cacb3c-4ef3-4d72-bbf3-d6618e450003",
+			categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a482',
+			genresId: "69cacb3c-4ef3-4d72-bbf3-d6618e450003",
       userId: "69cacb3c-4ef3-4d72-bbf3-d6618e45a45b"
 		});
 		await Product.create({
@@ -132,8 +132,8 @@ const productMockUp = async () => {
       Cantidad: 6 Unidades (3 pares) + Extractor de piezas",
 			// rating: 0,
 			// brand: 1,
-			categoryId: "62cacb3c-4ef3-4d72-bbf3-d6618e45a482",
-			genreId: '69cacb3c-4ef3-4d72-bbf3-d6618e450002',
+			categoryId: "69cacb3c-4ef3-4d72-bbf3-d6618e45a482",
+			genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450002',
       userId: "69cacb3c-4ef3-4d72-bbf3-d6618e45a45b"
 		});
 		await Product.create({
@@ -158,8 +158,8 @@ const productMockUp = async () => {
         Aplica la crema a diario con movimientos circulares ascendentes el contorno de ojos previamente limpio.",
 			// rating: 0,
 			// brand: 1,
-			categoryId: "62cacb3c-4ef3-4d72-bbf3-d6618e45a482",
-			genreId: "69cacb3c-4ef3-4d72-bbf3-d6618e450002",
+			categoryId: "69cacb3c-4ef3-4d72-bbf3-d6618e45a482",
+			genresId: "69cacb3c-4ef3-4d72-bbf3-d6618e450002",
       userId: "69cacb3c-4ef3-4d72-bbf3-d6618e45a45b"
 		});
 		await Product.create({
@@ -178,8 +178,8 @@ const productMockUp = async () => {
 				"Esta diseñada para camuflar y/o ocultar aquellas imperfecciones que no te favorecen, y que deterioran la vitalidad de tu rostro. ",
 			// rating: 0,
 			// brand: 1,
-			categoryId: "62cacb3c-4ef3-4d72-bbf3-d6618e45a482",
-			genreId: "69cacb3c-4ef3-4d72-bbf3-d6618e450002",
+			categoryId: "69cacb3c-4ef3-4d72-bbf3-d6618e45a482",
+			genresId: "69cacb3c-4ef3-4d72-bbf3-d6618e450002",
       userId: "69cacb3c-4ef3-4d72-bbf3-d6618e45a45b"
 		});
 		await Product.create({
@@ -200,9 +200,9 @@ const productMockUp = async () => {
         - No son pegajosos  ",
 			// rating: 0,
 			// brand: 1,
-			categoryId: "62cacb3c-4ef3-4d72-bbf3-d6618e45a482",
+			categoryId: "69cacb3c-4ef3-4d72-bbf3-d6618e45a482",
       userId: "69cacb3c-4ef3-4d72-bbf3-d6618e45a45b",
-      genreId: "69cacb3c-4ef3-4d72-bbf3-d6618e450002",
+      genresId: "69cacb3c-4ef3-4d72-bbf3-d6618e450002",
 		});
 		await Product.create({
 			name: "Portacosmetico Maquillaje",
@@ -228,8 +228,8 @@ const productMockUp = async () => {
         Altura 12 cm ",
 			// rating: 0,
 			// brand: 1,
-			categoryId: "62cacb3c-4ef3-4d72-bbf3-d6618e45a482",
-			genreId: "69cacb3c-4ef3-4d72-bbf3-d6618e450001",
+			categoryId: "69cacb3c-4ef3-4d72-bbf3-d6618e45a482",
+			genresId: "69cacb3c-4ef3-4d72-bbf3-d6618e450001",
       userId: "69cacb3c-4ef3-4d72-bbf3-d6618e45a45b"
 		});
 		await Product.create({
@@ -252,8 +252,8 @@ const productMockUp = async () => {
         y accesorios",
 			// rating: 0,
 			// brand: 1,
-			categoryId: "62cacb3c-4ef3-4d72-bbf3-d6618e45a482",
-			genreId: "69cacb3c-4ef3-4d72-bbf3-d6618e450001",
+			categoryId: "69cacb3c-4ef3-4d72-bbf3-d6618e45a482",
+			genresId: "69cacb3c-4ef3-4d72-bbf3-d6618e450001",
       userId: "69cacb3c-4ef3-4d72-bbf3-d6618e45a45b"
 		});
 
@@ -287,8 +287,8 @@ const productMockUp = async () => {
       1 x Xiaomi Redmi Power Bank 20000 mAh 18W Carga rápida",
 			// rating: 0,
 			// brand: 1,
-			categoryId: "62cacb3c-4ef3-4d72-bbf3-d6618e45a481",
-			genreId: "69cacb3c-4ef3-4d72-bbf3-d6618e450003",
+			categoryId: "69cacb3c-4ef3-4d72-bbf3-d6618e45a481",
+			genresId: "69cacb3c-4ef3-4d72-bbf3-d6618e450003",
       userId: "69cacb3c-4ef3-4d72-bbf3-d6618e45a45b"
 		});
 		await Product.create({
@@ -320,8 +320,8 @@ const productMockUp = async () => {
       • Caja de aluminio",
 
 			// brand: 1,
-			categoryId: '62cacb3c-4ef3-4d72-bbf3-d6618e45a481',
-			genreId: "69cacb3c-4ef3-4d72-bbf3-d6618e450003",
+			categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a481',
+			genresId: "69cacb3c-4ef3-4d72-bbf3-d6618e450003",
       userId: "69cacb3c-4ef3-4d72-bbf3-d6618e45a45b"
 		});
 		await Product.create({
@@ -352,8 +352,8 @@ const productMockUp = async () => {
       Estuche: 470 mAh",
 
 			// brand: 1,
-			categoryId: '62cacb3c-4ef3-4d72-bbf3-d6618e45a481',
-			genreId: "69cacb3c-4ef3-4d72-bbf3-d6618e450003",
+			categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a481',
+			genresId: "69cacb3c-4ef3-4d72-bbf3-d6618e450003",
       userId: "69cacb3c-4ef3-4d72-bbf3-d6618e45a45b"
 		});
 		await Product.create({
@@ -384,8 +384,8 @@ const productMockUp = async () => {
 
 			// brand: 1,
 
-      categoryId: '62cacb3c-4ef3-4d72-bbf3-d6618e45a481',
-			genreId: "69cacb3c-4ef3-4d72-bbf3-d6618e450003",
+      categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a481',
+			genresId: "69cacb3c-4ef3-4d72-bbf3-d6618e450003",
       userId: "69cacb3c-4ef3-4d72-bbf3-d6618e45a45b"
 		});
 		await Product.create({
@@ -421,8 +421,8 @@ const productMockUp = async () => {
       • Disponible en color oro, color plata y gris espacial",
 
 			// brand: 1,
-      categoryId: '62cacb3c-4ef3-4d72-bbf3-d6618e45a481',
-			genreId: "69cacb3c-4ef3-4d72-bbf3-d6618e450003",
+      categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a481',
+			genresId: "69cacb3c-4ef3-4d72-bbf3-d6618e450003",
       userId: "69cacb3c-4ef3-4d72-bbf3-d6618e45a45b"
 		});
 		await Product.create({
@@ -447,8 +447,8 @@ const productMockUp = async () => {
         - Conectividad WiFi 5, NFC, Bluetooth 5.0 IP53, lector de huella lateral, estéreo Dual SIM",
 
 			// brand: 1,
-      categoryId: '62cacb3c-4ef3-4d72-bbf3-d6618e45a481',
-  		genreId: "69cacb3c-4ef3-4d72-bbf3-d6618e450003",
+      categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a481',
+  		genresId: "69cacb3c-4ef3-4d72-bbf3-d6618e450003",
       userId: "69cacb3c-4ef3-4d72-bbf3-d6618e45a45b"
 		});
 		await Product.create({
@@ -472,8 +472,8 @@ const productMockUp = async () => {
         • Carga USB",
 
 			// brand: 1,
-			categoryId: '62cacb3c-4ef3-4d72-bbf3-d6618e45a481',
-			genreId: "69cacb3c-4ef3-4d72-bbf3-d6618e450003",
+			categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a481',
+			genresId: "69cacb3c-4ef3-4d72-bbf3-d6618e450003",
       userId: "69cacb3c-4ef3-4d72-bbf3-d6618e45a45b"
 		});
 		await Product.create({
@@ -496,9 +496,9 @@ const productMockUp = async () => {
         -Cubierta Perfect Cover",
 
 			// brand: 1,
-			      categoryId: '62cacb3c-4ef3-4d72-bbf3-d6618e45a481',
+			      categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a481',
 
-			genreId: "69cacb3c-4ef3-4d72-bbf3-d6618e450003",	
+			genresId: "69cacb3c-4ef3-4d72-bbf3-d6618e450003",	
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45c'
 		});
 		await Product.create({
@@ -525,8 +525,8 @@ const productMockUp = async () => {
         -Voltaje: 120V y 220V",
 
 			// brand: 1,
-      categoryId: '62cacb3c-4ef3-4d72-bbf3-d6618e45a481',
-      genreId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
+      categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a481',
+      genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45c'
 		});
 		await Product.create({
@@ -547,8 +547,8 @@ const productMockUp = async () => {
         - Control remoto simple",
 
 			// brand: 1,
-      categoryId: '62cacb3c-4ef3-4d72-bbf3-d6618e45a481',
-			genreId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
+      categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a481',
+			genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45c'
 		});
 
@@ -579,8 +579,8 @@ const productMockUp = async () => {
       - Abertura para la cabeza ajustable\
       \
       - Transpirable",
-      categoryId: '62cacb3c-4ef3-4d72-bbf3-d6618e45a484',
-			genreId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
+      categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a484',
+			genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45b'
 		});
 		await Product.create({
@@ -602,10 +602,11 @@ const productMockUp = async () => {
 \
       Material: Terciopelo, mezcla de algodón y poliester.",
 
-      categoryId: "62cacb3c-4ef3-4d72-bbf3-d6618e45a484",
-			genreId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
-      userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45b'
+        categoryId: "69cacb3c-4ef3-4d72-bbf3-d6618e45a484",
+	    genresId  : '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
+        userId    : '69cacb3c-4ef3-4d72-bbf3-d6618e45a45b'
 		});
+		
 		await Product.create({
 			name: "PAÑALES PARA PISO (Pack de 40 unidades)",
 			price: 50,
@@ -622,16 +623,16 @@ const productMockUp = async () => {
 			stock: 20,
 			description:
 				"Súper absorbentes, ideales para entrenar a los cachorros.\
-      Medidas: 60 cm x 60 cm\
-      Filtro de fugas para protección completa del suelo\
-      Ideales para el hogar, mascotas solas en casa, perros mayores, jaulas, autos, caniles, etc.\
-      Neutraliza los olores\
-      Adecuado para entrenamiento o como forro para la cama del perrito.",
+				Medidas: 60 cm x 60 cm\
+				Filtro de fugas para protección completa del suelo\
+				Ideales para el hogar, mascotas solas en casa, perros mayores, jaulas, autos, caniles, etc.\
+				Neutraliza los olores\
+				Adecuado para entrenamiento o como forro para la cama del perrito.",
 
 			// brand: 1,
-      categoryId: "62cacb3c-4ef3-4d72-bbf3-d6618e45a484",
-			genreId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
-      userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45b'
+			categoryId: "69cacb3c-4ef3-4d72-bbf3-d6618e45a484",
+			genresId  : '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
+			userId    : '69cacb3c-4ef3-4d72-bbf3-d6618e45a45b'
 		});
 		await Product.create({
 			name: "Pechera para perros",
@@ -654,8 +655,8 @@ const productMockUp = async () => {
       - Franjas de material reflectivo.",
 
 			// brand: 1,
-      categoryId: "62cacb3c-4ef3-4d72-bbf3-d6618e45a484",
-			genreId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
+      categoryId: "69cacb3c-4ef3-4d72-bbf3-d6618e45a484",
+			genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45b'
 		});
 		await Product.create({
@@ -675,8 +676,8 @@ const productMockUp = async () => {
         MEDIDA 11.5 cms de DIAMETRO X 3.5 CMS DE ALTURA",
 
 			// brand: 1,
-      categoryId: "62cacb3c-4ef3-4d72-bbf3-d6618e45a484",
-			genreId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
+      categoryId: "69cacb3c-4ef3-4d72-bbf3-d6618e45a484",
+			genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45b'
 		});
 		await Product.create({
@@ -700,8 +701,8 @@ const productMockUp = async () => {
         PRECIO PUBLICADO POR UNA PLAQUITA CON SU RESPECTIVO GRABADO EL QUE INDIQUE EL COMPRADOR",
 
 			// brand: 1,
-      categoryId: "62cacb3c-4ef3-4d72-bbf3-d6618e45a484",
-			genreId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
+      categoryId: "69cacb3c-4ef3-4d72-bbf3-d6618e45a484",
+			genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45b'
 		});
 		await Product.create({
@@ -730,8 +731,8 @@ const productMockUp = async () => {
         PESO DEL KENNEL 9,20 KILOS",
 
 			// brand: 1,
-      categoryId: "62cacb3c-4ef3-4d72-bbf3-d6618e45a484",
-			genreId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
+      categoryId: "69cacb3c-4ef3-4d72-bbf3-d6618e45a484",
+			genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45b'
 		});
 		await Product.create({
@@ -755,8 +756,8 @@ const productMockUp = async () => {
         MEDIDAS 35,5 CMS DE LARGO X 21 DE ANCHO X 32 CMS DE ALTO",
 
 			// brand: 1,
-      categoryId: "62cacb3c-4ef3-4d72-bbf3-d6618e45a484",
-			genreId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
+      categoryId: "69cacb3c-4ef3-4d72-bbf3-d6618e45a484",
+			genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45b'
 		});
 		await Product.create({
@@ -778,8 +779,8 @@ const productMockUp = async () => {
         18 CMS DE ALTO",
 
 			// brand: 1,
-      categoryId: "62cacb3c-4ef3-4d72-bbf3-d6618e45a484",
-			genreId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
+      categoryId: "69cacb3c-4ef3-4d72-bbf3-d6618e45a484",
+			genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45b'
 		});
 		await Product.create({
@@ -802,8 +803,8 @@ const productMockUp = async () => {
         NOTA EL COLOR ES AZUL OSCURO COMO LA ULTIMA FOTO",
 
 			// brand: 1,
-      categoryId: "62cacb3c-4ef3-4d72-bbf3-d6618e45a484",
-			genreId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
+      categoryId: "69cacb3c-4ef3-4d72-bbf3-d6618e45a484",
+			genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45b'
 		});
 
@@ -835,8 +836,8 @@ const productMockUp = async () => {
       Los pedales ajustables de la bicicleta protegen un uso rápido. Las ruedas te ayudan a mover fácilmente esta máquina de ciclo.",
 
 			// brand: 1,
-      categoryId: "62cacb3c-4ef3-4d72-bbf3-d6618e45a483",
-			genreId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
+      categoryId: "69cacb3c-4ef3-4d72-bbf3-d6618e45a483",
+			genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45c'
 		});
 		await Product.create({
@@ -863,8 +864,8 @@ const productMockUp = async () => {
       - 1 barra recta o " Z "solida AL ESCOGER',
 
 			// brand: 1,
-      categoryId: "62cacb3c-4ef3-4d72-bbf3-d6618e45a483",
-			genreId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
+      categoryId: "69cacb3c-4ef3-4d72-bbf3-d6618e45a483",
+			genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45c'
 		});
 		await Product.create({
@@ -891,8 +892,8 @@ const productMockUp = async () => {
       para ser utilizado para mejorar: fitness, músculos, reducción de peso",
 
 			// brand: 1,
-      categoryId: "62cacb3c-4ef3-4d72-bbf3-d6618e45a483",
-			genreId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
+      categoryId: "69cacb3c-4ef3-4d72-bbf3-d6618e45a483",
+			genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45c'
 		});
 		await Product.create({
@@ -920,8 +921,8 @@ const productMockUp = async () => {
       • 6 modos de estimulación, 4 intensidades",
 
 			// brand: 1,
-      categoryId: "62cacb3c-4ef3-4d72-bbf3-d6618e45a483",
-			genreId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
+      categoryId: "69cacb3c-4ef3-4d72-bbf3-d6618e45a483",
+			genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45c'
 		});
 		await Product.create({
@@ -953,8 +954,8 @@ const productMockUp = async () => {
       Lista de embalaje y embalaje: 1 x Junta push-up 2 x Mango antideslizante de silicona.",
 
 			// brand: 1,
-      categoryId: "62cacb3c-4ef3-4d72-bbf3-d6618e45a483",
-			genreId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
+      categoryId: "69cacb3c-4ef3-4d72-bbf3-d6618e45a483",
+			genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45c'
 		});
 		await Product.create({
@@ -977,8 +978,8 @@ const productMockUp = async () => {
         Cualquier duda o inquietud con gusto la atenderemos...",
 
 			// brand: 1,
-      categoryId: "62cacb3c-4ef3-4d72-bbf3-d6618e45a483",
-			genreId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
+      categoryId: "69cacb3c-4ef3-4d72-bbf3-d6618e45a483",
+			genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45c'
 		});
 		await Product.create({
@@ -1007,8 +1008,8 @@ const productMockUp = async () => {
         .-Condición del articulo: Nuevo.",
 
 			// brand: 1,
-      categoryId: "62cacb3c-4ef3-4d72-bbf3-d6618e45a483",
-			genreId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
+      categoryId: "69cacb3c-4ef3-4d72-bbf3-d6618e45a483",
+			genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45c'
 		});
 		await Product.create({
@@ -1030,8 +1031,8 @@ const productMockUp = async () => {
         - Funciona para frenos V- brake o Frenos de Disco",
 
 			// brand: 1,
-      categoryId: "62cacb3c-4ef3-4d72-bbf3-d6618e45a483",
-			genreId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
+      categoryId: "69cacb3c-4ef3-4d72-bbf3-d6618e45a483",
+			genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45c'
 		});
 		await Product.create({
@@ -1059,8 +1060,8 @@ const productMockUp = async () => {
         .-Condición del articulo: Nuevo.",
 
 			// brand: 1,
-      categoryId: "62cacb3c-4ef3-4d72-bbf3-d6618e45a483",
-			genreId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
+      categoryId: "69cacb3c-4ef3-4d72-bbf3-d6618e45a483",
+			genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45c'
 		});
 		await Product.create({
@@ -1081,8 +1082,8 @@ const productMockUp = async () => {
 				"Ideales para cualquier Entrenamiento, Gym, Crossfit, Yoga, Pilates. Juego de 5 Ligas de resistencia ajustables de varios colores, con el nivel de resistencia incluido en cada banda, ademas de una guía de ejercicios, bolsa de transporte y accesorios para realizar multitud de ejercicios de brazos, hombros, pecho, glúteos, piernas, etc. Las bandas elásticas pueden utilizarse juntas o por separado, disponen de mangos de espuma y mosquetones de metal para un óptimo agarre y sujeción. Gracias a su diseño portátil y su bolsa de transporte, se puede utilizar fácilmente en cualquier parte.",
 
 			// brand: 1,
-			categoryId: "62cacb3c-4ef3-4d72-bbf3-d6618e45a483",
-			genreId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
+			categoryId: "69cacb3c-4ef3-4d72-bbf3-d6618e45a483",
+			genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45c'
 		});
 	} catch (e) {
