@@ -33,6 +33,43 @@ const orderMockUp = async () => {
       unitPrice: 5,
       invoiceId: '721fcff2-66fe-48c5-b4dc-7a37248945e5',
     });
+
+
+
+    await Order.create({
+      status: 'Recibido',
+      purchased: true,
+      userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45d',
+      productId: '4841011e-fbf5-4c92-a770-3b06684f5893',
+      quantity: 2,
+      total: 50,
+      unitPrice: 5,
+      invoiceId: '721fcff2-66fe-48c5-b4dc-7a37248945e6',
+    });
+
+
+    await Order.create({
+      status: 'Recibido',
+      purchased: true,
+      userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45c',
+      productId: '4841011e-fbf5-4c92-a770-3b06684f5893',
+      quantity: 2,
+      total: 50,
+      unitPrice: 5,
+      invoiceId: '721fcff2-66fe-48c5-b4dc-7a37248945e7',
+    });
+
+    await Order.create({
+      status: 'Recibido',
+      purchased: true,
+      userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45c',
+      productId: '4841011e-fbf5-4c92-a770-3b06684f5893',
+      quantity: 2,
+      total: 50,
+      unitPrice: 5,
+      invoiceId: '721fcff2-66fe-48c5-b4dc-7a37248945e8',
+    });
+
   } catch (err) {
     console.log(err.message);
   }

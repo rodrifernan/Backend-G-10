@@ -1,4 +1,5 @@
 const { Router } = require('express');
+const { Op } = require('sequelize');
 const { Invoice, ShoppingCart, Product, Order, User } = require('../db');
 const router = Router();
 
@@ -64,50 +65,91 @@ router.post('/', loginVerification, async (req, res, next) => {
 });
 
 router.get('/all', rootVerification, async (req, res, next) => {
-  const allInvoices = await Invoice.findAll({
-    attributes: {
-      exclude: ['updatedAt'],
-    },
-
-    include: {
-      model: Order,
+  try {
+    const allInvoices = await Invoice.findAll({
       attributes: {
-        exclude: [
-          'id',
-          'updatedAt',
-          'invoiceId',
-          'createdAt',
-          'orderNumber',
-          'orderDate',
-          'purchased',
-          'status',
-        ],
+        exclude: ['updatedAt'],
       },
-      include: [{ model: Product, attributes: ['name', 'userId'] }],
-    },
-  }).then(async invoices => {
-    const response = [];
-    for (let i = 0; i < invoices.length; i++) {
-      const user = await User.findByPk(
-        invoices[i].dataValues.orders[0].dataValues.userId,
-        {
-          attributes: [
-            'id',
-            'userName',
-            'firstName',
-            'lastName',
-            'idPersonal',
-            'phone',
-            'address',
-          ],
-        }
-      );
-      response.push({ ...invoices[i].dataValues, user });
-    }
-    return response;
-  });
 
-  res.send(allInvoices);
+      include: {
+        model: Order,
+        attributes: {
+          exclude: [
+            'id',
+            'updatedAt',
+            'invoiceId',
+            'createdAt',
+            'orderNumber',
+            'orderDate',
+            'purchased',
+            'status',
+          ],
+        },
+        include: [{ model: Product, attributes: ['name', 'userId'] }],
+      },
+    }).then(async invoices => {
+      const response = [];
+      for (let i = 0; i < invoices.length; i++) {
+        const user = await User.findByPk(
+          invoices[i].dataValues.orders[0].dataValues.userId,
+          {
+            attributes: [
+              'id',
+              'userName',
+              'firstName',
+              'lastName',
+              'idPersonal',
+              'phone',
+              'address',
+            ],
+          }
+        );
+        response.push({ ...invoices[i].dataValues, user });
+      }
+      return response;
+    });
+
+    res.send(allInvoices);
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.get('/user', loginVerification, async (req, res, next) => {
+  try {
+    const { id: userId } = req.user;
+
+    const invoices = await Invoice.findAll({
+      where: {
+        '$orders.userId$': userId,
+      },
+
+      attributes: {
+        exclude: ['updatedAt'],
+      },
+
+      include: {
+        model: Order,
+        attributes: {
+          exclude: [
+            'id',
+            'updatedAt',
+            'invoiceId',
+            'createdAt',
+            'orderNumber',
+            'orderDate',
+            'purchased',
+            'status',
+          ],
+        },
+        include: [{ model: Product, attributes: ['name', 'userId'] }],
+      },
+    });
+
+    res.send(invoices);
+  } catch (error) {
+    next(error);
+  }
 });
 
 module.exports = router;
