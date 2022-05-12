@@ -67,4 +67,16 @@ router.delete('/', loginVerification, async (req, res, next) => {
   }
 });
 
+router.delete('/clean', loginVerification, async (req, res, next) => {
+  try {
+    const { id: userId } = req.user;
+
+    await Wishlist.destroy({ where: { userId } });
+
+    res.sendStatus(200);
+  } catch (error) {
+    next(error);
+  }
+});
+
 module.exports = router;
