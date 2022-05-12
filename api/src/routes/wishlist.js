@@ -57,9 +57,9 @@ router.post('/', loginVerification, async (req, res, next) => {
 router.delete('/', loginVerification, async (req, res, next) => {
   try {
     const { id: userId } = req.user;
-    const { productId } = req.body;
+    const { id } = req.body;
 
-    await Wishlist.destroy({ where: { userId, productId } });
+    await Wishlist.destroy({ where: { userId, id } });
 
     res.send({ type: 'success', msg: 'Successfully deleted' });
   } catch (error) {
