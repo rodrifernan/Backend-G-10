@@ -26,7 +26,11 @@ router.get('/', loginVerification, async (req, res, next) => {
       },
     }).then(data =>
       data.map(({ dataValues }) => {
-        const item = { ...dataValues, ...dataValues.product.dataValues };
+        const productRow = dataValues.product.dataValues;
+        productRow.productId = productRow.id;
+        delete productRow.id;
+
+        const item = { ...dataValues, ...productRow };
         delete item.product;
         return item;
       })
@@ -66,12 +70,13 @@ router.post('/', loginVerification, async (req, res, next) => {
 
 router.delete('/', loginVerification, async (req, res, next) => {
   try {
+
     const { id: userId } = req.user;
     const { id } = req.body;
 
     await ShoppingCart.destroy({ where: { userId, id } });
 
-    res.status(200).send({ type: 'success', msg: 'Successfully delete' });
+    res.sendStatus(200);
   } catch (error) {
     next(error);
   }
@@ -84,8 +89,10 @@ router.put('/', loginVerification, async (req, res, next) => {
 
     await ShoppingCart.update({ quantity }, { where: { userId, id } });
 
-    res.status(200).send({ type: 'success', msg: 'Successfully update' });
-  } catch (error) {}
+    res.sendStatus(200);
+  } catch (error) {
+    next(error);
+  }
 });
 
 module.exports = router;

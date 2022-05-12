@@ -59,6 +59,10 @@ router.get('/checkout', loginVerification, async (req, res, next) => {
   try {
     const { id: userId } = req.user;
 
+    const user = await User.findByPk(userId, {  attributes: {
+      exclude: ['createdAt', 'updatedAt', 'userId', 'password', 'banned', 'roleId', 'id'],
+    }, });
+
     const shoppingCart = await ShoppingCart.findAll({
       where: {
         userId,
@@ -91,7 +95,7 @@ router.get('/checkout', loginVerification, async (req, res, next) => {
       })
     );
 
-    res.send(shoppingCart);
+    res.send({shoppingCart, user});
   } catch (error) {
     next(error);
   }
