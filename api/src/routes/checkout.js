@@ -5,54 +5,6 @@ const router = Router();
 const jwt = require('jsonwebtoken');
 const { ShoppingCart, Product } = require('../db');
 
-/* Johanna Credenciales de prueba
-  Public Key   = TEST-3ae77776-7e39-4039-a715-84aa78666cb6
-  Access Token = TEST-1784388789089956-050402-d4abbf689aa14211c19cfec4cc9c3b55-1051717499
-
-   Produccion
-   Public Key   = APP_USR-8e995cb0-64dc-402d-88c1-ba0a2e7c2fb2
-   Access Token = APP_USR-1784388789089956-050402-f0746c5606d9762553b3ee8bfe7929de-1051717499
-   //
-    curl -X POST \
-      -H 'Content-Type: application/json' \
-      'https://api.mercadopago.com/users/test_user?access_token=APP_USR-1784388789089956-050402-f0746c5606d9762553b3ee8bfe7929de-1051717499' \
-      -d '{"site_id": "MLA"}'
-   //
-
-   Vendedor : Esta es la cuenta que utilizas para configurar la aplicación y las credenciales para la facturación.
-   Comprador: Esta es la cuenta que utilizas para probar el proceso de compra.
-
-      Usuario 1 Vendedor :
-      {"id":1117806187,
-      "nickname":"TESTEZ0E1V9M",
-      "password":"qatest2431",
-      "site_status":"active",
-      "email":"test_user_5512323@testuser.com"}
-
-          Credenciales de prueba
-            Public Key = TEST-796de016-4d7d-4673-997a-f99fd8945add
-             Access Token = TEST-6226075526766588-050413-9751273c19710d88a8cd2a37622fb4f5-1117806187
-      //
-
-      Usuario 2 Comprador :
-                {"id":1117802819,
-                "nickname":"TETE3719227",
-                "password":"qatest7548",
-                "site_status":"active",
-                "email":"test_user_66280282@testuser.com"}
-
-                Credenciales de producción
-                  Public Key = APP_USR-50efae4b-d043-4334-b0fd-3dec27b905b8
-                  Access Token = APP_USR-8377423348310842-050413-bd614f4787f8b8dbb3f84868afd94be1-1117802819
-
-                  Client ID = 8377423348310842
-                  Client Secret = lKwvszM3W7boga03VfblgCGCtDOj2yDI
-
-                Credenciales de prueba
-                  Public Key = TEST-6f46dc32-5e88-4786-b892-ebe1fd60f262
-                  Access Token = TEST-8377423348310842-050413-e63c90781fae0887fc3d045b3f607a25-1117802819
-
- */
 // Integrar SDK mercadopago
 const mercadopago = require('mercadopago');
 // Agrega Credenciales
@@ -67,7 +19,7 @@ mercadopago.configure({
      - Obtener un chequeo de pago
 */
 router.get('/:userId', async (req, res, next) => {
-  console.log('estoy BACK get __GET /checkout__ ');
+  console.log('estoy BACK get __GET /checkout/:userId__ ');
 
   const { id: userId } = jwt.verify(
     req.params.userId,
@@ -176,11 +128,49 @@ module.exports = router;
 // MLB: Mercado Libre Brasil
 // MLM: Mercado Libre México
 
-// Johannes Gomez@DESKTOP-7ERIIOD MINGW64 ~
-// $ curl -X POST \
-//       -H 'Content-Type: application/json' \
-//       'https://api.mercadopago.com/users/test_user?access_token=APP_USR-1784388789089956-050402-f0746c5606d9762553b3ee8bfe7929de-1051717499' \
-//       -d '{"site_id": "MLA"}'
+/*
+   //
+    curl -X POST \
+      -H 'Content-Type: application/json' \
+      'https://api.mercadopago.com/users/test_user?access_token=APP_USR-1784388789089956-050402-f0746c5606d9762553b3ee8bfe7929de-1051717499' \
+      -d '{"site_id": "MLA"}'
+   //
+
+   Vendedor : Esta es la cuenta que utilizas para configurar la aplicación y las credenciales para la facturación.
+   Comprador: Esta es la cuenta que utilizas para probar el proceso de compra.
+
+      Usuario 1 Vendedor :
+      {"id":1117806187,
+      "nickname":"TESTEZ0E1V9M",
+      "password":"qatest2431",
+      "site_status":"active",
+      "email":"test_user_5512323@testuser.com"}
+
+          Credenciales de prueba
+            Public Key = TEST-796de016-4d7d-4673-997a-f99fd8945add
+             Access Token = TEST-6226075526766588-050413-9751273c19710d88a8cd2a37622fb4f5-1117806187
+      //
+
+      Usuario 2 Comprador :
+                {"id":1117802819,
+                "nickname":"TETE3719227",
+                "password":"qatest7548",
+                "site_status":"active",
+                "email":"test_user_66280282@testuser.com"}
+
+                Credenciales de producción
+                  Public Key = APP_USR-50efae4b-d043-4334-b0fd-3dec27b905b8
+                  Access Token = APP_USR-8377423348310842-050413-bd614f4787f8b8dbb3f84868afd94be1-1117802819
+
+                  Client ID = 8377423348310842
+                  Client Secret = lKwvszM3W7boga03VfblgCGCtDOj2yDI
+
+                Credenciales de prueba
+                  Public Key = TEST-6f46dc32-5e88-4786-b892-ebe1fd60f262
+                  Access Token = TEST-8377423348310842-050413-e63c90781fae0887fc3d045b3f607a25-1117802819
+
+ */
+
 // {"id":1117806187,"nickname":"TESTEZ0E1V9M","password":"qatest2431","site_status":"active","email":"test_user_5512323@testuser.com"}
 
 // $ curl -X POST       -H 'Content-Type: application/json'       'https://api.mercadopago.com/users/test_user?access_token=APP_USR-1784388789089956-050402-f0746c5606d9762553b3ee8bfe7929de-1051717499'       -d '{"site_id": "MLA"}'
