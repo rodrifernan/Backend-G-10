@@ -63,7 +63,7 @@ const orderMockUp = async () => {
       status: 'Recibido',
       purchased: true,
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45c',
-      productId: '4841011e-fbf5-4c92-a770-3b06684f5893',
+      productId: 'f08879c1-0c73-4fa1-a5bd-fec99e10c063',
       quantity: 2,
       total: 50,
       unitPrice: 5,

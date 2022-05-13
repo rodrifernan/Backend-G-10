@@ -1065,6 +1065,7 @@ const productMockUp = async () => {
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45c'
 		});
 		await Product.create({
+			id: "f08879c1-0c73-4fa1-a5bd-fec99e10c063",
 			name: "Set Ligas Tubulares De Resistencia",
 			price: 21,
 			// newItem: false,

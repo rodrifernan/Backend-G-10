@@ -11,6 +11,7 @@ const genres = require("./genres");
 const login = require("./login");
 const shoppingCart = require("./shoppingCart");
 const wishlist = require("./wishlist");
+const sales = require("./sales");
 const productById = require("./productById");
 const orders = require("./orders");
 const checkout = require("./checkout"); // chequear pago
@@ -18,6 +19,7 @@ const paymentIdPM = require("./paymentIdPM"); // buscar la orden de pago compra 
 const editProduct = require("./editProduct"); // buscar la orden de pago compra ver items
 const invoice = require("./invoice"); // buscar la orden de pago compra ver items
 const getProductsByUser = require("./getProductsByUser");
+
 // mildelword
 const router = Router();
 
@@ -41,6 +43,7 @@ router.use("/checkout", checkout);
 router.use("/paymentIdPM", paymentIdPM);
 router.use("/editProduct", editProduct);
 router.use("/invoice", invoice);
+router.use("/sales", sales);
 router.use("/productsByUser", getProductsByUser);
 
 module.exports = router;
