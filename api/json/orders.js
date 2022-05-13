@@ -2,7 +2,7 @@ const { Order } = require('../src/db');
 const orderMockUp = async () => {
   try {
     await Order.create({
-      status: 'en almacen',
+      status: 'Recepción',
       purchased: true,
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45d',
       productId: '4841011e-fbf5-4c92-a770-3b06684f5891',
@@ -20,6 +20,7 @@ const orderMockUp = async () => {
       quantity: 5,
       total: 5.6,
       unitPrice: 5,
+      discount: 30,
       invoiceId: '721fcff2-66fe-48c5-b4dc-7a37248945e5',
     });
 
