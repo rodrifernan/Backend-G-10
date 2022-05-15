@@ -15,8 +15,6 @@ const checkout = require('./checkout'); // chequear pago
 const paymentIdPM = require('./paymentIdPM'); // buscar la orden de pago compra ver items
 const editProduct = require('./editProduct'); // buscar la orden de pago compra ver items
 const invoice = require('./invoice'); // buscar la orden de pago compra ver items
-const sendMail = require("../configs/mailer"); // configuracion de mailer
-const changePassword = require('../configs/changePassword'); // ruta cambio de password
 
 // milddelword
 const router = Router();
@@ -39,7 +37,5 @@ router.use('/checkout', checkout);
 router.use('/paymentIdPM', paymentIdPM);
 router.use('/editProduct', editProduct);
 router.use('/invoice', invoice);
-router.use('/sendMail', sendMail); // ruta send mail prueba
-router.use('/changePassword', changePassword); // ruta cambio de password
 
 module.exports = router;
