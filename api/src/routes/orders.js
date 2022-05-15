@@ -78,21 +78,23 @@ router.get('/checkout', loginVerification, async (req, res, next) => {
       },
     }).then(data =>
       data.map(({ dataValues }) => {
-        const subTotal =
+        const totalPage =
           dataValues.product.dataValues.price -
           (dataValues.product.dataValues.price *
             dataValues.product.dataValues.discount) /
             100;
+        const subTotalItem = dataValues.product.dataValues.price * dataValues.quantity
 
         return {
-          title: dataValues.product.dataValues.name,
-          price: dataValues.product.dataValues.price,
-          quantity: dataValues.quantity,
-          discount: dataValues.product.dataValues.discount,
-          subTotal,
-          total: subTotal * dataValues.quantity,
+          title     : dataValues.product.dataValues.name,
+          price     : dataValues.product.dataValues.price,
+          quantity  : dataValues.quantity,
+          discount  : dataValues.product.dataValues.discount,
+          subTotal  : subTotalItem,
+          totalPage : totalPage,
+          discountItem : subTotalItem-totalPage,
         };
-      })
+      })      
     );
 
     res.send({shoppingCart, user});

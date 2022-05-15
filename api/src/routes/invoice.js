@@ -36,9 +36,9 @@ router.post('/', loginVerification, async (req, res, next) => {
         return item;
       })
     );
-
+    let orderBd={}
     shoppingCart.forEach(async ({ discount, quantity, productId, price }) => {
-      await Order.create({
+      const order = await Order.create({
         total: quantity * (price - (price * discount) / 100),
         quantity,
         discount,
@@ -47,6 +47,7 @@ router.post('/', loginVerification, async (req, res, next) => {
         unitPrice: price,
         invoiceId: invoice.id,
       });
+      orderBd = order
     });
 
     await invoice.update({
@@ -57,8 +58,9 @@ router.post('/', loginVerification, async (req, res, next) => {
     });
 
     await invoice.save();
-
-    res.status(201).send({ invoiceNumber: invoice.invoiceNumber });
+    
+    res.status(201).send({ orderBd, invoiceNumber: invoice.invoiceNumber });
+    
   } catch (error) {
     next(error);
   }
