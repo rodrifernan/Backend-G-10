@@ -234,12 +234,14 @@ router.get('/all', rootVerification, async (req, res, next) => {
 
 router.post('/ban', rootVerification, async (req, res, next) => {
   try {
-    const { userId } = req.body;
-    const user = await User.findByPk(userId);
+    const { id } = req.body;
+    console.log(id);
+    const user = await User.findByPk(id);
+    console.log(user);
 
     await User.update(
       { banned: user.banned ? false : true },
-      { where: { id: userId } }
+      { where: { id: id } }
     );
 
     res.sendStatus(200);
