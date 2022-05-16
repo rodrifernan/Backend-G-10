@@ -38,9 +38,9 @@ conn
     await rolesMockUp();
     await usersMockUp();
     await genreMockUp();
-    await reviewsMockUp();
     await categoryMockUp();
     await productMockUp();
+    await reviewsMockUp();
     await wishlistCartMockUp();
     await shoppingCartMockUp();
     await invoicesMockUp();
