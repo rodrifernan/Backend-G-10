@@ -20,7 +20,7 @@ const editProduct = require("./editProduct"); // buscar la orden de pago compra 
 const invoice = require("./invoice"); // buscar la orden de pago compra ver items
 const getProductsByUser = require("./getProductsByUser");
 
-// mildelword
+// milddelword
 const router = Router();
 
 //console.log(products) //
