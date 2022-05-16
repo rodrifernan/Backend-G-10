@@ -19,6 +19,7 @@ const paymentIdPM = require("./paymentIdPM"); // buscar la orden de pago compra 
 const editProduct = require("./editProduct"); // buscar la orden de pago compra ver items
 const invoice = require("./invoice"); // buscar la orden de pago compra ver items
 const getProductsByUser = require("./getProductsByUser");
+const activateProduct = require("./activateProduct");
 
 // milddelword
 const router = Router();
@@ -45,5 +46,8 @@ router.use("/editProduct", editProduct);
 router.use("/invoice", invoice);
 router.use("/sales", sales);
 router.use("/productsByUser", getProductsByUser);
+router.use("/activateProduct", activateProduct);
+
+
 
 module.exports = router;
