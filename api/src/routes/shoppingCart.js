@@ -114,7 +114,7 @@ router.post('/guest', async (req, res, next) => {
 
     for (let i = 0; i < list.length; i++) {
       const details = await Product.findByPk(list[i].productId, {
-        attributes: ['id', 'name', 'discount', 'image', 'price'],
+        attributes: ['id', 'name', 'discount', 'image', 'price', 'stock'],
       }).then(({ dataValues }) => dataValues);
 
       data.push({ ...list[i], ...details });
