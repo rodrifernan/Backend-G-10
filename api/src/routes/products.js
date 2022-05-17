@@ -26,19 +26,30 @@ router.get('/', async (req, res, next) => {
             order: [['createdAt', 'DESC']],
             include: {
               model: User,
-              attributes: ['userName'],
-            },
-          },
-        ], // name de la categoria relacionado a su categoryId
+              attributes: ['userName'],},},
+        ],
+        where: { active: false }, 
       });
-      //return res.status(200).send(getAllBdProduct)
       return res.status(200).send(await getAllProduct(getAllBdProduct));
     } else {
-      // Filter by name, name is not empty
       console.log('Estoy BACK get __GET /products Name ', req.query);
       let getAllBdProduct = await Product.findAll({
-        include: [Category, Reviews], // name de la categoria relacionado a su categoryId
-        where: { name: { [Op.iLike]: `%${name}%` } }, // Filtra por name product
+        include: [Category, Reviews], 
+
+        // where: {
+        //   category: { [Op.like]: `%${req.query.category}%` },
+        //   location: { [Op.like]: `%${req.query.location}%` },
+        //   [Op.or]: [
+        //     { job: { [Op.like]: `%${req.query.job}%` } },
+        //     { bio: { [Op.like]: `%${req.query.job}%` } },
+        //     { skills: { [Op.like]: `%${req.query.job}%` } },
+        //   ],
+        // },        
+
+        where: 
+           {name: { [Op.iLike]: `%${name}%`},
+                  [Op.and] :
+           {active: false}},
       });
       return res.send(await getAllProduct(getAllBdProduct));
     }
