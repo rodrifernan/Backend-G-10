@@ -63,6 +63,7 @@ const getAllProduct = async getAllBdProduct => {
       warranty: elem.warranty,
       category: elem.category.name,
       reviews: elem.reviews,
+      active: elem.active
     };
   });
   return getAllBdProduct1;
