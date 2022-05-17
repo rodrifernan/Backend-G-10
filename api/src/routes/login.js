@@ -12,7 +12,7 @@ const loginValidator = [
   body('password').not().isEmpty().withMessage('Este campo es obligatorio.'),
 ];
 
-const successLogin = user => {
+const successLogin = (user, root) => {
   const token = jwt.sign(
     {
       id: user.id,
@@ -25,6 +25,7 @@ const successLogin = user => {
     msg: 'Login Completo.',
     userName: user.userName,
     token,
+    root
   };
 };
 
@@ -60,6 +61,13 @@ router.post('/', loginValidator, async (req, res) => {
       type: 'noLogin',
       msg: 'No se pudieron comprobar sus credenciales.',
     });
+
+
+  if (user.roleId === 'ad114fef-1e85-4dd7-af41-a252935b4e41'){
+      const root = true
+      return  res.send(successLogin(user, root))
+    }
+
 
   res.send(successLogin(user));
 });
