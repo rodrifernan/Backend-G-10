@@ -35,17 +35,6 @@ router.get('/', async (req, res, next) => {
       console.log('Estoy BACK get __GET /products Name ', req.query);
       let getAllBdProduct = await Product.findAll({
         include: [Category, Reviews], 
-
-        // where: {
-        //   category: { [Op.like]: `%${req.query.category}%` },
-        //   location: { [Op.like]: `%${req.query.location}%` },
-        //   [Op.or]: [
-        //     { job: { [Op.like]: `%${req.query.job}%` } },
-        //     { bio: { [Op.like]: `%${req.query.job}%` } },
-        //     { skills: { [Op.like]: `%${req.query.job}%` } },
-        //   ],
-        // },        
-
         where: 
            {name: { [Op.iLike]: `%${name}%`},
                   [Op.and] :
