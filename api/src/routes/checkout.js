@@ -58,7 +58,7 @@ router.get('/:userId', async (req, res, next) => {
     back_urls: {
       failure: '',
       pending: '',
-      success: 'http://localhost:3000/responseMP', // Rretornat añl componente y buscar payment_id para buscar la compra del cliente
+      success: process.env.URL+'/responseMP', // Rretornat añl componente y buscar payment_id para buscar la compra del cliente
     },
     auto_return: 'approved', // venta aprobada retornar con propiedad success
   };
