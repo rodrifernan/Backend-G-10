@@ -1,8 +1,8 @@
-const axios = require("axios");
-const { Router } = require("express");
-const { Product, Category, Reviews } = require("../db"); // traer mi modelo
+const axios = require('axios');
+const { Router } = require('express');
+const { Product, Category, Reviews, User } = require('../db'); // traer mi modelo
 const router = Router();
-const { Op } = require("sequelize");
+const { Op } = require('sequelize');
 
 /* #### Backend 
    - [ ] GET /filtercategory:
@@ -11,18 +11,27 @@ const { Op } = require("sequelize");
    - [ ] GET /filtercategory?name="...":
      - Obtener un listado de los products por name
 */
-router.get("/", async (req, res, next) => {
-
+router.get('/', async (req, res, next) => {
   let { name } = req.query;
   try {
-    console.log("Estoy BACK get __GET /products Name ", req.query);
+    console.log('Estoy BACK get __GET /products Name ', req.query);
     let getAllBdProduct = await Product.findAll({
-      include: [Category, Reviews], // name de la categoria relacionado a su categoryId
+      include: [
+        Category,
+        {
+          model: Reviews,
+          attributes: ['id', 'rating', 'comment', 'createdAt'],
+          order: [['createdAt', 'DESC']],
+          include: {
+            model: User,
+            attributes: ['userName'],
+          },
+        },
+      ], // name de la categoria relacionado a su categoryId
     });
     let aux = await getAllProduct(getAllBdProduct);
-  
 
-    const filter = aux.filter((e) => e.category === name);
+    const filter = aux.filter(e => e.category === name);
     console.log(filter);
 
     return res.send(filter);
@@ -31,8 +40,8 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-const getAllProduct = async (getAllBdProduct) => {
-  const getAllBdProduct1 = getAllBdProduct.map((elem) => {
+const getAllProduct = async getAllBdProduct => {
+  const getAllBdProduct1 = getAllBdProduct.map(elem => {
     return {
       id: elem.id,
       description: elem.description,
@@ -47,7 +56,7 @@ const getAllProduct = async (getAllBdProduct) => {
       rating: elem.rating,
       warranty: elem.warranty,
       category: elem.category.name,
-      reviews: elem.reviews.map((ele) => ele.rating),
+      reviews: elem.reviews,
     };
   });
   return getAllBdProduct1;
