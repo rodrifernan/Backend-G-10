@@ -54,6 +54,8 @@ router.post('/', loginVerification, async (req, res, next) => {
 
       product.save();
 
+      await ShoppingCart.destroy({ where: { userId } });
+
       orderBd = order;
     });
 
