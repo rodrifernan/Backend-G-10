@@ -2,17 +2,29 @@ const { Router } = require("express");
 const router = Router();
 
 const { loginVerification } = require("../middlewares/login");
-const { User, Product } = require("../db");
+const { User, Product, Category, Reviews } = require("../db");
 
 router.get("/", loginVerification, async (req, res) => {
 	const { id } = req.user;
 
 	try {
-		const productsByUser = await User.findByPk(id, {
-			include: Product,
+		let products = await Product.findAll({
+			where: {userId: id},
+			include: [
+				Category,
+				{
+					model: Reviews,
+					attributes: ['id', 'rating', 'comment', 'createdAt'],
+					order: [['createdAt', 'DESC']],
+					include: {
+						model: User,
+						attributes: ['userName'],
+					},
+				},
+			], 
 		});
 
-		return res.status(200).send(productsByUser.products);
+		return res.status(200).send(products);
 	} catch (error) {
 		console.log(error);
 		return res.status(500).send(error);
