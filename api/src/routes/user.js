@@ -258,5 +258,23 @@ router.post('/root', rootVerification, async (req, res, next) => {
   }
 });
 
+router.put('/', loginVerification, async (req, res) => {
+  const { firstName, lastName, email, address, phone, userName, id } = req.body;
+
+  const resp = await User.update(
+    {
+      firstName,
+      lastName,
+      email,
+      address,
+      phone,
+      userName,
+    },
+    {
+      where: { id: id },
+    }
+  );
+  res.send('User Update');
+});
 
 module.exports = router;
