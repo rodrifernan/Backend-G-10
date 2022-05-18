@@ -50,5 +50,9 @@ module.exports = sequelize => {
       allowNull: false,
       defaultValue: false,
     },
+    resetLink: {
+      type: DataTypes.STRING,
+      defaultValue: false
+    }
   });
 };

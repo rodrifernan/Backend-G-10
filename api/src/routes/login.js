@@ -6,6 +6,9 @@ const bcrypt = require('bcrypt');
 const { User } = require('../db'); // traer mi modelo
 const router = Router();
 const { loginVerification } = require('../middlewares/login');
+const transporter = require('../configs/mailer');
+
+
 //Validators
 const loginValidator = [
   body('userOrEmail').not().isEmpty().withMessage('Este campo es obligatorio.'),
@@ -94,29 +97,7 @@ router.post('/google', async (req, res, next) => {
   }
 });
 
-router.post('/facebook', async (req, res, next) => {
-  try {
-    const { name: userName, email } = req.body;
 
-    const user = await User.findOne({ where: { email } });
-
-    if (user) return res.send(successLogin(user));
-
-    const newUser = await User.create({
-      userName,
-      firstName: '',
-      lastName: '',
-      email,
-      password: '',
-      address: '',
-      idPersonal: '',
-      roleId: 'ad114fef-1e85-4dd7-af41-a252935b4e43',
-    });
-
-    res.send(successLogin(newUser));
-  } catch (error) {
-    next(error);
-  }
-});
 
 module.exports = router;
+

@@ -24,7 +24,7 @@ const usersMockUp = async () => {
       firstName: 'Leidy',
       lastName: 'Nuñes',
       phone: '+51 978654154',
-      email: 'leidy@gmail.com',
+      email: 'leidydi621@hotmail.com',
       address: 'Calle luna',
       roleId: 'ad114fef-1e85-4dd7-af41-a252935b4e43',
       idPersonal: '87653221',
