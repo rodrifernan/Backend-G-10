@@ -45,14 +45,15 @@ router.post("/", async (req, res, next) => {
           tls: { rejectUnauthorized: false },
         });
 
-        transporter.sendMail({
-            from: '"Olvido contraseña" <efdwxstkn5itdeg6@ethereal.email>',
-            to: email,
-            subject: 'Olvido contraseña',
-            html: `
-              <h2>Haga click en el enlace para restablecer su contraseña</h2>
-              <a href="https://frontend-g-10.vercel.app/forgotPassword/">Restablecer contraseña</a>
-            `
+      //fs.readFile("./attachment.txt", function (err, data))
+        const recupero = await transporter.sendMail({
+          from: "'ShopBag' <johannes.gomez@gmail.com>",
+          to: email,
+          subject: "Olvido contraseña",
+          html: `
+              <b>Haga click en el enlace para restablecer su contraseña</b>
+              <a href="https://frontend-g-10.vercel.app/forgotPassword/">Restablecer contraseña</a> 
+            `,
         });
            //Cambiaremos el href para adaptar al deploy
         res.send({
