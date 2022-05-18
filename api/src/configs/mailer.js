@@ -1,3 +1,4 @@
+
 const nodemailer = require('nodemailer');
 
  const transporter = nodemailer.createTransport({
@@ -12,6 +13,15 @@ const nodemailer = require('nodemailer');
 transporter.verify().then(() => {
   console.log('Server is ready to take our messages');
 })
+
+await transporter.sendMail ({
+          from: "'Olvido contraseña' <efdwxstkn5itdeg6@ethereal.email>",
+          to:'johannes.gomez@gmail.com',
+          subject: "Olvido contraseña",
+          html: `
+                <h4>dar click en el siguiente enlace para completar el proceso </h4>
+                <a href='aqui va la verificación'></a>`
+});
 
 
 

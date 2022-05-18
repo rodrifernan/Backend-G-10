@@ -20,6 +20,7 @@ const editProduct = require("./editProduct"); // buscar la orden de pago compra 
 const invoice = require("./invoice"); // buscar la orden de pago compra ver items
 const getProductsByUser = require("./getProductsByUser");
 const activateProduct = require("./activateProduct");
+const mail = require("./mail");
 
 // milddelword
 const router = Router();
@@ -47,6 +48,7 @@ router.use("/invoice", invoice);
 router.use("/sales", sales);
 router.use("/productsByUser", getProductsByUser);
 router.use("/activateProduct", activateProduct);
+router.use("/mail", mail);
 
 
 
