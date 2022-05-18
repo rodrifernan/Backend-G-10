@@ -22,11 +22,11 @@ router.post(
   
         const { email } = req.body;
   
-        const user = await User.findOne({ where: { email:  bcrypt.hashSync(req.body.email, 10), } });
+        const user = await User.findOne({ where: { email:  email } });
 
         
 
-        if ( user )    
+        if ( user === null )    
 
         return res.status(400).send({
           errors: [
