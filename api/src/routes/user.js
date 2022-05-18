@@ -5,6 +5,8 @@ const { User, Role } = require('../db'); // traer mi modelo
 const router = Router();
 const { loginVerification, rootVerification } = require('../middlewares/login');
 const { Op } = require('sequelize');
+const nodemailer  = require('nodemailer');
+const {emails}     = require('./mails');
 // Validators
 
 const userValidators = [
@@ -100,6 +102,10 @@ router.post('/', userValidators, async (req, res, next) => {
       ...req.body,
       password: bcrypt.hashSync(req.body.password, 10),
     });
+
+
+    console.log(req.body)
+    emails(req.body.email) // enviar correo de bienvenida
 
     return res.status(201).send({ success: true, msg: 'Registro Completo' });
   } catch (error) {
