@@ -17,8 +17,7 @@ const ordersQuantity = async () => {
 const salesQuantity = async () => {
   const sales = await Order.findAll();
 
-
-  return sales.reduce((a,b)=>  a + b.total , 0);
+  return sales.reduce((a, b) => a + b.total, 0).toFixed(2);
 };
 
 const lastOrders = async () => {
@@ -27,12 +26,22 @@ const lastOrders = async () => {
     order: [['createdAt', 'DESC']],
     attributes: ['orderNumber', 'orderDate', 'total', 'status'],
     include: [
-      {model: Product, attributes: ['name', 'image']},
-      {model: User, attributes: ['firstName', 'lastName']}
-    ]
+      { model: Product, attributes: ['name', 'image'] },
+      { model: User, attributes: ['firstName', 'lastName'] },
+    ],
   });
 
   return orders;
+};
+
+const newProduct = async id => {
+  const product = await Product.findAll({
+    attributes: ['name', 'image', 'createdAt'],
+    order: [['createdAt', 'DESC']],
+    limit: 1,
+  });
+
+  return product[0];
 };
 
 module.exports = {
@@ -40,4 +49,5 @@ module.exports = {
   ordersQuantity,
   salesQuantity,
   lastOrders,
+  newProduct,
 };
