@@ -3,7 +3,6 @@ const productMockUp = async () => {
   try {
     // ******************************************BEAUTY***************************
     await Product.create({
-      active: true,
       id: '4841011e-fbf5-4c92-a770-3b06684f5891',
       name: 'Limpiador facial',
       price: 300,
@@ -35,10 +34,10 @@ const productMockUp = async () => {
       categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a482',
       genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45b',
+      active:true,
     });
 
     await Product.create({
-      active: true,
       id: '4841011e-fbf5-4c92-a770-3b06684f5892',
       name: 'Cejas postizas',
       price: 500,
@@ -64,9 +63,9 @@ const productMockUp = async () => {
       categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a482',
       genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450002',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45b',
+      active:true,
     });
     await Product.create({
-      active: true,
       id: '4841011e-fbf5-4c92-a770-3b06684f5893',
       name: 'Removedor acne y espinillas',
       price: 65,
@@ -89,9 +88,9 @@ const productMockUp = async () => {
       categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a482',
       genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45b',
+      active:true,
     });
     await Product.create({
-      active: true,
       id: '4841011e-fbf5-4c92-a770-3b06684f5894',
       name: 'Depilador de nariz',
       price: 65,
@@ -114,9 +113,9 @@ const productMockUp = async () => {
       categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a482',
       genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45b',
+      active:true,
     });
     await Product.create({
-      active: true,
       name: 'Corrector Repingador Nasal',
       price: 35,
       // newItem: false,
@@ -140,9 +139,9 @@ const productMockUp = async () => {
       categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a482',
       genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450002',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45b',
+      active:true,
     });
     await Product.create({
-      active: true,
       name: 'Crema Antiarrugas Loreal',
       price: 15,
       // newItem: false,
@@ -167,9 +166,9 @@ const productMockUp = async () => {
       categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a482',
       genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450002',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45b',
+      active:true,
     });
     await Product.create({
-      active: true,
       name: 'Paleta 15 Correctores Mac',
       price: 2,
       // newItem: false,
@@ -188,9 +187,9 @@ const productMockUp = async () => {
       categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a482',
       genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450002',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45b',
+      active:true,
     });
     await Product.create({
-      active: true,
       name: 'Labial Mac Kylie Clinique',
       price: 5,
       // newItem: false,
@@ -211,9 +210,9 @@ const productMockUp = async () => {
       categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a482',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45b',
       genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450002',
+      active:true,
     });
     await Product.create({
-      active: true,
       name: 'Portacosmetico Maquillaje',
       price: 20,
       // newItem: false,
@@ -240,9 +239,9 @@ const productMockUp = async () => {
       categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a482',
       genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450001',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45b',
+      active:true,
     });
     await Product.create({
-      active: true,
       name: 'Bolso Hello Kitty',
       price: 10,
       // newItem: false,
@@ -265,11 +264,11 @@ const productMockUp = async () => {
       categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a482',
       genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450001',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45b',
+      active:true,
     });
 
     // ********************************ELECTRONIC****************
     await Product.create({
-      active: true,
       name: 'Cargador Redmi Xiomi',
       price: 500,
       // newItem: false,
@@ -301,9 +300,9 @@ const productMockUp = async () => {
       categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a481',
       genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45b',
+      active:true,
     });
     await Product.create({
-      active: true,
       name: 'Apple Watch',
       price: 700,
       // newItem: false,
@@ -335,9 +334,9 @@ const productMockUp = async () => {
       categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a481',
       genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45b',
+      active:true,
     });
     await Product.create({
-      active: true,
       name: 'Audífonos Redmi Buds 3 Pro',
       price: 100,
       // newItem: false,
@@ -368,9 +367,9 @@ const productMockUp = async () => {
       categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a481',
       genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45b',
+      active:true,
     });
     await Product.create({
-      active: true,
       name: 'Mi Stick',
       price: 123,
       // newItem: false,
@@ -401,9 +400,9 @@ const productMockUp = async () => {
       categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a481',
       genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45b',
+      active:true,
     });
     await Product.create({
-      active: true,
       name: 'Air Apple Notebook',
       price: 100,
       // newItem: false,
@@ -439,9 +438,9 @@ const productMockUp = async () => {
       categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a481',
       genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45b',
+      active:true,
     });
     await Product.create({
-      active: true,
       name: 'Xiaomi Redmi Note 10s',
       price: 239,
       // newItem: false,
@@ -466,9 +465,9 @@ const productMockUp = async () => {
       categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a481',
       genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45b',
+      active:true,
     });
     await Product.create({
-      active: true,
       name: 'Reproductor Boss Multimedia',
       price: 30,
       // newItem: false,
@@ -492,9 +491,9 @@ const productMockUp = async () => {
       categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a481',
       genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45b',
+      active:true,
     });
     await Product.create({
-      active: true,
       name: 'Batidora Oster De Pedestal',
       price: 110,
       // newItem: false,
@@ -515,12 +514,11 @@ const productMockUp = async () => {
 
       // brand: 1,
       categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a481',
-
       genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45c',
+      active:true,
     });
     await Product.create({
-      active: true,
       name: 'Plancha Oster A Vapor 1400',
       price: 15,
       // newItem: false,
@@ -547,9 +545,9 @@ const productMockUp = async () => {
       categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a481',
       genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45c',
+      active:true,
     });
     await Product.create({
-      active: true,
       name: 'Roku Premiere Streaming',
       price: 34,
       // newItem: false,
@@ -570,12 +568,12 @@ const productMockUp = async () => {
       categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a481',
       genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45c',
+      active:true,
     });
 
     // *******************************PETS****************************
 
     await Product.create({
-      active: true,
       name: 'Canguro para perros y gatos',
       price: 30,
       // newItem: false,
@@ -603,9 +601,9 @@ const productMockUp = async () => {
       categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a484',
       genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45b',
+      active:true,
     });
     await Product.create({
-      active: true,
       name: 'Disfraces para perros',
       price: 43,
       // newItem: false,
@@ -627,10 +625,10 @@ const productMockUp = async () => {
       categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a484',
       genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45b',
+      active:true,
     });
 
     await Product.create({
-      active: true,
       name: 'PAÑALES PARA PISO (Pack de 40 unidades)',
       price: 50,
       // newItem: false,
@@ -656,9 +654,9 @@ const productMockUp = async () => {
       categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a484',
       genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45b',
+      active:true,
     });
     await Product.create({
-      active: true,
       name: 'Pechera para perros',
       price: 12,
       // newItem: false,
@@ -682,9 +680,9 @@ const productMockUp = async () => {
       categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a484',
       genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45b',
+      active:true,
     });
     await Product.create({
-      active: true,
       name: 'Comedero Bebedero para perros',
       price: 80,
       // newItem: false,
@@ -704,9 +702,9 @@ const productMockUp = async () => {
       categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a484',
       genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45b',
+      active:true,
     });
     await Product.create({
-      active: true,
       name: 'Plaquita Identificadora de mascotas',
       price: 4,
       // newItem: false,
@@ -730,9 +728,9 @@ const productMockUp = async () => {
       categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a484',
       genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45b',
+      active:true,
     });
     await Product.create({
-      active: true,
       name: 'Kennel Tipo 400',
       price: 250,
       // newItem: false,
@@ -761,9 +759,9 @@ const productMockUp = async () => {
       categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a484',
       genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45b',
+      active:true,
     });
     await Product.create({
-      active: true,
       name: 'Acuario Acrilico Penn Plax Neptune',
       price: 70,
       // newItem: false,
@@ -787,9 +785,9 @@ const productMockUp = async () => {
       categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a484',
       genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45b',
+      active:true,
     });
     await Product.create({
-      active: true,
       name: 'Penn Plax Adorno Pecera',
       price: 11,
       // newItem: false,
@@ -811,9 +809,9 @@ const productMockUp = async () => {
       categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a484',
       genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45b',
+      active:true,
     });
     await Product.create({
-      active: true,
       name: 'Filtro Interno Agua Para Peceras',
       price: 45,
       // newItem: false,
@@ -836,6 +834,7 @@ const productMockUp = async () => {
       categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a484',
       genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45b',
+      active:true,
     });
 
     // ************************************SPORT*******************************
@@ -870,9 +869,9 @@ const productMockUp = async () => {
       categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a483',
       genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45c',
+      active:true,
     });
     await Product.create({
-      active: true,
       name: 'Mancuernas de gimnasio',
       price: 60,
       // newItem: false,
@@ -899,6 +898,7 @@ const productMockUp = async () => {
       categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a483',
       genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45c',
+      active:true,
     });
     await Product.create({
       active: true,
@@ -928,6 +928,7 @@ const productMockUp = async () => {
       categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a483',
       genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45c',
+      active:true,
     });
     await Product.create({
       active: true,
@@ -958,6 +959,7 @@ const productMockUp = async () => {
       categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a483',
       genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45c',
+      active:true,
     });
     await Product.create({
       active: true,
@@ -992,6 +994,7 @@ const productMockUp = async () => {
       categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a483',
       genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45c',
+      active:true,
     });
     await Product.create({
       active: true,
@@ -1017,6 +1020,7 @@ const productMockUp = async () => {
       categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a483',
       genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45c',
+      active:true,
     });
     await Product.create({
       active: true,
@@ -1048,6 +1052,7 @@ const productMockUp = async () => {
       categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a483',
       genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45c',
+      active:true,
     });
     await Product.create({
       active: true,
@@ -1072,9 +1077,9 @@ const productMockUp = async () => {
       categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a483',
       genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45c',
+      active:true,
     });
     await Product.create({
-      active: true,
       name: 'Silla Sillín P/bicicleta',
       price: 10,
       // newItem: false,
@@ -1102,6 +1107,7 @@ const productMockUp = async () => {
       categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a483',
       genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45c',
+      active:true,
     });
     await Product.create({
       active: true,
@@ -1126,6 +1132,7 @@ const productMockUp = async () => {
       categoryId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a483',
       genresId: '69cacb3c-4ef3-4d72-bbf3-d6618e450003',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45c',
+      active:true,
     });
   } catch (e) {
     console.log(e.message);
