@@ -14,6 +14,10 @@ router.get("/", loginVerification, async (req, res) => {
 				Category,
 				{
 					model: Reviews,
+					where: {
+						finished: true,
+					},
+					required: false,
 					attributes: ['id', 'rating', 'comment', 'createdAt'],
 					order: [['createdAt', 'DESC']],
 					include: {

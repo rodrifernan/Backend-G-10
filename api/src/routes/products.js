@@ -18,27 +18,49 @@ router.get('/', async (req, res, next) => {
     if (!name) {
       // All records table if name is empty
       let getAllBdProduct = await Product.findAll({
+        where: { active: true },
+
         include: [
           Category,
           {
             model: Reviews,
+            where: {
+              finished: true,
+            },
+            required: false,
             attributes: ['id', 'rating', 'comment', 'createdAt'],
             order: [['createdAt', 'DESC']],
             include: {
               model: User,
-              attributes: ['userName'],},},
+              attributes: ['userName'],
+            },
+          },
         ],
-        where: { active: false }, 
       });
       return res.status(200).send(await getAllProduct(getAllBdProduct));
     } else {
       console.log('Estoy BACK get __GET /products Name ', req.query);
       let getAllBdProduct = await Product.findAll({
-        include: [Category, Reviews], 
-        where: 
-           {name: { [Op.iLike]: `%${name}%`},
-                  [Op.and] :
-           {active: false}},
+        where: {
+          active: true,
+          name: { [Op.iLike]: `%${name}%` },
+        },
+        include: [
+          Category,
+          {
+            model: Reviews,
+            where: {
+              finished: true,
+            },
+            required: false,
+            attributes: ['id', 'rating', 'comment', 'createdAt'],
+            order: [['createdAt', 'DESC']],
+            include: {
+              model: User,
+              attributes: ['userName'],
+            },
+          },
+        ],
       });
       return res.send(await getAllProduct(getAllBdProduct));
     }

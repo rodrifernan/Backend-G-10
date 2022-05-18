@@ -16,12 +16,17 @@ router.get('/', async (req, res, next) => {
   try {
     console.log('Estoy BACK get __GET /products Name ', req.query);
     let getAllBdProduct = await Product.findAll({
+      where: { active: true },
       include: [
         Category,
         {
           model: Reviews,
           attributes: ['id', 'rating', 'comment', 'createdAt'],
           order: [['createdAt', 'DESC']],
+          where: {
+            finished: true,
+          },
+          required: false,
           include: {
             model: User,
             attributes: ['userName'],

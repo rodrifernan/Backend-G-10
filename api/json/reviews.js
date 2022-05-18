@@ -6,6 +6,7 @@ const reviewsMockUp = async () => {
       comment: 'Muy buen producto 01',
       productId: '4841011e-fbf5-4c92-a770-3b06684f5894',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45b',
+      finished: true,
     });
 
     await Reviews.create({
@@ -13,6 +14,7 @@ const reviewsMockUp = async () => {
       comment: 'Buen producto',
       productId: '4841011e-fbf5-4c92-a770-3b06684f5894',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45c',
+      finished: true,
     });
 
     await Reviews.create({
@@ -20,6 +22,7 @@ const reviewsMockUp = async () => {
       comment: 'Excelente producto',
       productId: '4841011e-fbf5-4c92-a770-3b06684f5894',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45b',
+      finished: true,
     });
 
     await Reviews.create({
@@ -27,7 +30,16 @@ const reviewsMockUp = async () => {
       comment: '👍',
       productId: '4841011e-fbf5-4c92-a770-3b06684f5894',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45c',
+      finished: true,
     });
+
+
+    await Reviews.create({
+      productId: '4841011e-fbf5-4c92-a770-3b06684f5894',
+      userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45c',
+    });
+
+
   } catch (err) {
     console.log(err.message);
   }
