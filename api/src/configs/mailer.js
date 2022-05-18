@@ -10,7 +10,7 @@ const nodemailer = require('nodemailer');
     },
   });
 transporter.verify().then(() => {
-  console.log('Server is ready to take our messages');
+  console.log('Server is ready for send emails');
 })
 
 
