@@ -33,7 +33,7 @@ router.post('/', loginVerification, async (req, res, next) => {
     const { id, comment, rating } = req.body;
 
     await Reviews.update(
-      { comment, rating, finished: true },
+      { comment, rating: rating ? rating : 1, finished: true },
       { where: { id } }
     );
 
