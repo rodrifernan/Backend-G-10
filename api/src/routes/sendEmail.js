@@ -5,8 +5,7 @@ const { User, Role } = require('../db'); // traer mi modelo
 const router = Router();
 const { loginVerification, rootVerification } = require('../middlewares/login');
 const { Op } = require('sequelize');
-const transporter = require('../configs/mailer');
-
+const nodemailer = require("nodemailer");
 
 
 
@@ -14,47 +13,60 @@ const transporter = require('../configs/mailer');
     - [ ] __POST /sendEmail: */
 
 
-router.post(
-    '/',
-    (async (req, res, next) => {
-  
+router.post("/", async (req, res, next) => {
+  try {
+    const { email } = req.body;
+
+    const user = await User.findOne({
+      where: { email: email },
+    });
+
+    if (user === null)
+      return res.status(400).send({
+        errors: [
+          {
+            msg: "Email Incorrecto.",
+            param: "email",
+            email: email,
+          },
+        ],
+      });
+    else {
       try {
-  
-        const { email } = req.body;
-  
-        const user = await User.findOne({ where: { email:  email } });
-
-        
-
-        if ( user === null )    
-
-        return res.status(400).send({
-          errors: [
-            {
-              msg: 'Email Incorrecto.',
-              param: 'email',
-            },
-          ],
+        const transporter = nodemailer.createTransport({
+          host: "smtp.gmail.com",
+          port: 465,
+          secure: true,
+          auth: {
+            // nombre de usuario y nuestra contraseña
+            user: "johannes.gomez@gmail.com", // correo de host
+            pass: "mdiqfuqrtfvrhefn", // contraseña generada de google de nuestra aplicacion
+          },
+          tls: { rejectUnauthorized: false },
         });
-
-        transporter.sendMail({
-            from: '"Olvido contraseña" <efdwxstkn5itdeg6@ethereal.email>',
-            to: email,
-            subject: 'Olvido contraseña',
-            html: `
-              <h2>Haga click en el enlace para restablecer su contraseña</h2>
-              <a href="https://localHost:3000/forgotPassword/">Restablecer contraseña</a>
-            `
+        //fs.readFile("./attachment.txt", function (err, data))
+        const recupero = await transporter.sendMail({
+          from: "'ShopBag' <johannes.gomez@gmail.com>",
+          to: email,
+          subject: "Olvido contraseña",
+          html: `
+              <b>Haga click en el enlace para restablecer su contraseña</b>
+              <a href="http://localhost:3000/forgotPassword/">Restablecer contraseña</a> 
+            `,
         });
-  
+           //Cambiaremos el href para adaptar al deploy
         res.send({
-          msg: 'email enviado',
+          msg: "email enviado",
           email: email,
         });
       } catch (error) {
         next(error);
       }
-    }));
+    }
+  } catch (error) {
+    next(error);
+  }
+});
   
 
 
