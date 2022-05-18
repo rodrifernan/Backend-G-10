@@ -3,8 +3,6 @@ const { Reviews, Product } = require('../db'); // traer mi modelo
 const { loginVerification, rootVerification } = require('../middlewares/login');
 const router = Router();
 
-
-
 router.get('/user', loginVerification, async (req, res, next) => {
   try {
     const { id: userId } = req.user;
@@ -25,6 +23,21 @@ router.get('/user', loginVerification, async (req, res, next) => {
     });
 
     res.send(reviews);
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.post('/', loginVerification, async (req, res, next) => {
+  try {
+    const { id, comment, rating } = req.body;
+
+    await Reviews.update(
+      { comment, rating, finished: true },
+      { where: { id } }
+    );
+
+    res.sendStatus(200);
   } catch (error) {
     next(error);
   }
