@@ -5,8 +5,7 @@ const { User, Role } = require('../db'); // traer mi modelo
 const router = Router();
 const { loginVerification, rootVerification } = require('../middlewares/login');
 const { Op } = require('sequelize');
-const transporter = require('../configs/mailer');
-
+const nodemailer = require("nodemailer");
 
 
 
@@ -14,27 +13,36 @@ const transporter = require('../configs/mailer');
     - [ ] __POST /sendEmail: */
 
 
-router.post(
-    '/',
-    (async (req, res, next) => {
-  
+router.post("/", async (req, res, next) => {
+  try {
+    const { email } = req.body;
+
+    const user = await User.findOne({
+      where: { email: email },
+    });
+
+    if (user === null)
+      return res.status(400).send({
+        errors: [
+          {
+            msg: "Email Incorrecto.",
+            param: "email",
+            email: email,
+          },
+        ],
+      });
+    else {
       try {
-  
-        const { email } = req.body;
-  
-        const user = await User.findOne({ where: { email:  bcrypt.hashSync(req.body.email, 10), } });
-
-        
-
-        if ( user )    
-
-        return res.status(400).send({
-          errors: [
-            {
-              msg: 'Email Incorrecto.',
-              param: 'email',
-            },
-          ],
+        const transporter = nodemailer.createTransport({
+          host: "smtp.gmail.com",
+          port: 465,
+          secure: true,
+          auth: {
+            // nombre de usuario y nuestra contraseña
+            user: "johannes.gomez@gmail.com", // correo de host
+            pass: "mdiqfuqrtfvrhefn", // contraseña generada de google de nuestra aplicacion
+          },
+          tls: { rejectUnauthorized: false },
         });
 
         transporter.sendMail({
@@ -46,15 +54,19 @@ router.post(
               <a href="https://frontend-g-10.vercel.app/forgotPassword/">Restablecer contraseña</a>
             `
         });
-  
+           //Cambiaremos el href para adaptar al deploy
         res.send({
-          msg: 'email enviado',
+          msg: "email enviado",
           email: email,
         });
       } catch (error) {
         next(error);
       }
-    }));
+    }
+  } catch (error) {
+    next(error);
+  }
+});
   
 
 
