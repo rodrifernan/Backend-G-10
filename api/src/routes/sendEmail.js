@@ -43,7 +43,7 @@ router.post(
             subject: 'Olvido contraseña',
             html: `
               <h2>Haga click en el enlace para restablecer su contraseña</h2>
-              <a href="https://frontend-g-10.vercel.app/">Restablecer contraseña</a>
+              <a href="https://localHost:3000/forgotPassword/">Restablecer contraseña</a>
             `
         });
   
