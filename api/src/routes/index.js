@@ -22,8 +22,8 @@ const getProductsByUser = require("./getProductsByUser");
 const activateProduct = require("./activateProduct");
 const reviews = require("./reviews");
 const productsAdmin = require("./productsAdmin");
-//const mail = require("./mail");
-
+const fortgotPassword = require("./forgotPassword");
+const sendEmail = require("./sendEmail");
 
 
 // milddelword
@@ -54,8 +54,8 @@ router.use("/productsByUser", getProductsByUser);
 router.use("/activateProduct", activateProduct);
 router.use("/reviews", reviews);
 router.use("/productsAdmin",productsAdmin);
-//router.use("/mail", mail);
-
+router.use("/forgotPassword",fortgotPassword);
+router.use("/sendEmail",sendEmail);
 
 
 
