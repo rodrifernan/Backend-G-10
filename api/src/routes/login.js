@@ -11,8 +11,11 @@ const loginValidator = [
   body('userOrEmail').not().isEmpty().withMessage('Este campo es obligatorio.'),
   body('password').not().isEmpty().withMessage('Este campo es obligatorio.'),
 ];
+const nodemailer  = require('nodemailer');
+const {emails}     = require('./mails');
 
-const successLogin = (user, root) => {
+
+const successLogin = user => {
   const token = jwt.sign(
     {
       id: user.id,
@@ -25,7 +28,6 @@ const successLogin = (user, root) => {
     msg: 'Login Completo.',
     userName: user.userName,
     token,
-    root
   };
 };
 
@@ -62,13 +64,6 @@ router.post('/', loginValidator, async (req, res) => {
       msg: 'No se pudieron comprobar sus credenciales.',
     });
 
-
-  if (user.roleId === 'ad114fef-1e85-4dd7-af41-a252935b4e41'){
-      const root = true
-      return  res.send(successLogin(user, root))
-    }
-
-
   res.send(successLogin(user));
 });
 
@@ -95,6 +90,8 @@ router.post('/google', async (req, res, next) => {
       idPersonal: '',
       roleId: 'ad114fef-1e85-4dd7-af41-a252935b4e43',
     });
+
+    emails(email) // enviar correo de bienvenida
 
     res.send(successLogin(newUser));
   } catch (error) {
