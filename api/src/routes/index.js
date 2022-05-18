@@ -21,6 +21,7 @@ const invoice = require("./invoice"); // buscar la orden de pago compra ver item
 const getProductsByUser = require("./getProductsByUser");
 const activateProduct = require("./activateProduct");
 const reviews = require("./reviews");
+const productsAdmin = require("./productsAdmin");
 
 
 // milddelword
@@ -50,6 +51,7 @@ router.use("/sales", sales);
 router.use("/productsByUser", getProductsByUser);
 router.use("/activateProduct", activateProduct);
 router.use("/reviews", reviews);
+router.use("/productsAdmin",productsAdmin);
 
 
 
