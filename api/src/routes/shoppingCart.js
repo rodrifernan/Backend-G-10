@@ -52,7 +52,13 @@ router.post('/', loginVerification, async (req, res, next) => {
     });
 
     if (product) {
-      await product.update({ quantity: product.quantity + 1 });
+      const productDetails = await Product.findByPk(productId);
+      await product.update({
+        quantity:
+          product.quantity + 1 > productDetails.stock
+            ? product.quantity
+            : product.quantity + 1,
+      });
       await product.save();
     } else {
       await ShoppingCart.create({

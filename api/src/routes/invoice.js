@@ -1,6 +1,13 @@
 const { Router } = require('express');
 const { Op } = require('sequelize');
-const { Invoice, ShoppingCart, Product, Order, User } = require('../db');
+const {
+  Invoice,
+  ShoppingCart,
+  Product,
+  Order,
+  User,
+  Reviews,
+} = require('../db');
 const router = Router();
 
 const { loginVerification, rootVerification } = require('../middlewares/login');
@@ -13,6 +20,8 @@ const { loginVerification, rootVerification } = require('../middlewares/login');
 router.post('/', loginVerification, async (req, res, next) => {
   try {
     const { id: userId } = req.user;
+
+    const reviews = [];
 
     const invoice = await Invoice.create();
 
@@ -62,7 +71,15 @@ router.post('/', loginVerification, async (req, res, next) => {
 
     await invoice.save();
 
-    res.status(201).send({ invoice });
+    for (let i = 0; i < shoppingCart.length; i++) {
+      const review = await Reviews.create({
+        userId,
+        productId: shoppingCart[i].productId,
+      });
+      reviews.push(review);
+    }
+
+    res.status(201).send({ invoice, reviews });
   } catch (error) {
     next(error);
   }
