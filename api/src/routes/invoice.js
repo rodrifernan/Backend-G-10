@@ -110,22 +110,25 @@ router.get('/all', rootVerification, async (req, res, next) => {
       },
     }).then(async invoices => {
       const response = [];
+
       for (let i = 0; i < invoices.length; i++) {
-        const user = await User.findByPk(
-          invoices[i].dataValues.orders[0].dataValues.userId,
-          {
-            attributes: [
-              'id',
-              'userName',
-              'firstName',
-              'lastName',
-              'idPersonal',
-              'phone',
-              'address',
-            ],
-          }
-        );
-        response.push({ ...invoices[i].dataValues, user });
+        if (invoices[i].dataValues.orders.length) {
+          const user = await User.findByPk(
+            invoices[i].dataValues.orders[0].dataValues.userId,
+            {
+              attributes: [
+                'id',
+                'userName',
+                'firstName',
+                'lastName',
+                'idPersonal',
+                'phone',
+                'address',
+              ],
+            }
+          );
+          response.push({ ...invoices[i].dataValues, user });
+        }
       }
       return response;
     });

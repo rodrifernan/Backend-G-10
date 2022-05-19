@@ -79,7 +79,7 @@ const orderMockUp = async () => {
     ];
 
     users.forEach(async userId => {
-      for (let i = 0; i < 10; i++) {
+      for (let i = 0; i < 20; i++) {
         if (randomNumber(0, 5) % 2) continue;
 
         const date = dates[randomNumber(0, dates.length - 1)];
