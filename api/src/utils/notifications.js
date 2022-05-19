@@ -1,4 +1,5 @@
-const { User, Order, Product } = require('../db'); // traer mi modelo
+const { User, Order, Product, Category } = require('../db'); // traer mi modelo
+const {Sequelize} = require('sequelize')
 
 const usersQuantity = async () => {
   const users = await User.findAll({
@@ -18,6 +19,12 @@ const salesQuantity = async () => {
   const sales = await Order.findAll();
 
   return sales.reduce((a, b) => a + b.total, 0).toFixed(2);
+};
+
+const profitAmount = async () => {
+  const sales = await Order.findAll();
+
+  return (sales.reduce((a, b) => a + b.total, 0) * 0.02).toFixed(2);
 };
 
 const lastOrders = async () => {
@@ -44,10 +51,29 @@ const newProduct = async id => {
   return product[0];
 };
 
+const getRadarChar = async () => {
+  const data = await Product.findAll({
+    attributes: [[Sequelize.fn('sum', Sequelize.col('stock')), 'A']],
+    include: { model: Category, attributes: ['name'] },
+    group: ['product.categoryId', ['category.name']],
+    raw: true,
+  });
+
+  const fullMark = Math.max(...[...data].map(item => Number(item.A)));
+
+  return data.map(item => ({
+    subject: item['category.name'],
+    A: Number(item.A),
+    fullMark,
+  }));
+};
+
 module.exports = {
   usersQuantity,
   ordersQuantity,
   salesQuantity,
+  profitAmount,
   lastOrders,
   newProduct,
+  getRadarChar
 };
