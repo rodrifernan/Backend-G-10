@@ -82,6 +82,23 @@ const getPieChar = async () => {
   }));
 };
 
+const salesReport = async () => {
+  const sales = await Order.findAll({
+    attributes: [
+      'orderDate',
+      [Sequelize.fn('sum', Sequelize.col('total')), 'sumTotal'],
+    ],
+    group: ['orderDate'],
+    order: [['orderDate', 'DESC']],
+    raw: true,
+  });
+
+  return sales.map(item => ({
+    date: item.orderDate,
+    total: Number(item.sumTotal.toFixed(2)),
+  }));
+};
+
 module.exports = {
   usersQuantity,
   ordersQuantity,
@@ -91,4 +108,5 @@ module.exports = {
   newProduct,
   getRadarChar,
   getPieChar,
+  salesReport,
 };
