@@ -15,7 +15,7 @@ const productMockUp = async () => {
         'https://res.cloudinary.com/dr8u3dssn/image/upload/v1651376664/beaty/acne/4_2_kygt2x.png',
         'https://res.cloudinary.com/dr8u3dssn/image/upload/v1651376664/beaty/acne/4_1_tc2czi.png',
       ],
-      stock: 50,
+      stock: 5,
       description:
         'LIMPIEZA PROFUNDA\
       MODO LUZ ROJA\
@@ -51,7 +51,7 @@ const productMockUp = async () => {
         'https://res.cloudinary.com/dr8u3dssn/image/upload/v1651376685/beaty/cejas/5_1_gfaj0x.png',
         'https://res.cloudinary.com/dr8u3dssn/image/upload/v1651376685/beaty/cejas/5_2_rybzvf.png',
       ],
-      stock: 20,
+      stock: 5,
       description:
         '1. Aplicar delineador de ojos magnético.\
       2. Espere de 3 a 4 minutos a que el delineador se seque al aire.\
@@ -79,7 +79,7 @@ const productMockUp = async () => {
         'https://res.cloudinary.com/dr8u3dssn/image/upload/v1651376563/beaty/removedor%20espinillas/1_3_uglovp.png',
         'https://res.cloudinary.com/dr8u3dssn/image/upload/v1651376563/beaty/removedor%20espinillas/1_2_iwtkht.png',
       ],
-      stock: 20,
+      stock: 3,
       description:
         'Esta máquina portátil de belleza anti acne, microdermoabrasión viene con 4 puntas intercambiables, con 4 funciones diferentes. Es la primera máquina de belleza que se integra con el peeling de la piel, el estiramiento de la cara, la limpieza de poros, la espinilla y la extracción y eliminación de arrugas en el mercado.\
       Cinco niveles, adecuados para pieles diferentes.',
@@ -104,7 +104,7 @@ const productMockUp = async () => {
         'https://res.cloudinary.com/dr8u3dssn/image/upload/v1651376615/beaty/depilador/2_2_cqdnuf.png',
         'https://res.cloudinary.com/dr8u3dssn/image/upload/v1651376615/beaty/depilador/2_3_hljho7.png',
       ],
-      stock: 10,
+      stock: 4,
       description:
         '¿Molesto por esos pequeños pelos de la nariz que se niegan a salir? La solución es pequeña, sencilla y rápida. El cortador de vello nasal Nose Trimmer elimina con suavidad los vellos no deseados de la nariz y las orejas. Este producto está diseñado especialmente para asegurar un corte rápido, sencillo, cómodo y sin tirones. El cortador es totalmente lavable, fácil de sostener y controlar. Lleva a tu tocador o baño la cortadora de vello nasal.\
       Colores disponibles: Plateado, Negro (consultar previamente)',
@@ -117,7 +117,7 @@ const productMockUp = async () => {
     });
     await Product.create({
       name: 'Corrector Repingador Nasal',
-      price: 35,
+      price: 3,
       // newItem: false,
       brand: 'Generico',
       color: 'Rosa',
@@ -128,7 +128,7 @@ const productMockUp = async () => {
         'https://res.cloudinary.com/dr8u3dssn/image/upload/v1651376638/beaty/nariz/3_2_ppt4rg.png',
         'https://res.cloudinary.com/dr8u3dssn/image/upload/v1651376638/beaty/nariz/3_3_avexvo.png',
       ],
-      stock: 13,
+      stock: 4,
       description:
         '\
       Color: Negro\
@@ -152,7 +152,7 @@ const productMockUp = async () => {
       image: [
         'https://http2.mlstatic.com/D_NQ_NP_741424-MLV46542913780_062021-O.webp',
       ],
-      stock: 20,
+      stock: 2,
       description:
         'Lucha contra la pérdida de firmeza en el contorno de los ojos. Hidrata y tonifica el contorno de los ojos, reduce las patas de gallo\
         Beneficios\
@@ -280,7 +280,7 @@ const productMockUp = async () => {
         'https://res.cloudinary.com/dr8u3dssn/image/upload/v1651376773/electronic/cargador/1_2_wusmnx.png',
         'https://res.cloudinary.com/dr8u3dssn/image/upload/v1651376773/electronic/cargador/1_1_tqqcab.png',
       ],
-      stock: 20,
+      stock: 6,
       description:
         'Marca: Xiaomi Redmi\
       Tipo: batería de polímero de iones de litio\
@@ -315,7 +315,7 @@ const productMockUp = async () => {
         'https://res.cloudinary.com/dr8u3dssn/image/upload/v1651376862/electronic/apple%20watch/5_1_ehagb5.png',
         'https://res.cloudinary.com/dr8u3dssn/image/upload/v1651376862/electronic/apple%20watch/5_3_gqkvew.png',
       ],
-      stock: 20,
+      stock: 4,
       description:
         'Monitorea tu frecuencia cardiaca y recibe notificaciones si parece estar demasiado alta o baja. Mide tus entrenamientos, lleva un registro de tu actividad y compártela. También puedes recibir llamadas, mandar y recibir mensajes de texto, y guardar música y podcasts. El Apple Watch Series 3 te permite hacer de todo directamente desde tu muñeca.\
 \
@@ -348,7 +348,7 @@ const productMockUp = async () => {
         'https://res.cloudinary.com/dr8u3dssn/image/upload/v1651376799/electronic/audifono/2_2_rvskva.png',
         'https://res.cloudinary.com/dr8u3dssn/image/upload/v1651376799/electronic/audifono/2_1_j7osim.png',
       ],
-      stock: 29,
+      stock: 7,
       description:
         'Cancelación de ruido profundo de 35dB * Permitiéndole disfrutar de un mundo con menos ruido de fondo, Cancelación de ruido de llamada de tres micrófonos\
       Se puede escuchar claramente en entornos ruidosos.\
@@ -382,7 +382,7 @@ const productMockUp = async () => {
         'https://res.cloudinary.com/dr8u3dssn/image/upload/v1651376823/electronic/stick/3_1_keodfq.png',
         'https://res.cloudinary.com/dr8u3dssn/image/upload/v1651376823/electronic/stick/3_2_m902hd.png',
       ],
-      stock: 69,
+      stock: 4,
       description:
         '- Procesador: Cuatro núcleos Cortex A53\
       - GPU: Mali 450\
@@ -415,7 +415,7 @@ const productMockUp = async () => {
         'https://res.cloudinary.com/dr8u3dssn/image/upload/v1651376840/electronic/laptop/4_2_z1fkri.png',
         'https://res.cloudinary.com/dr8u3dssn/image/upload/v1651376840/electronic/laptop/4_3_gzajxt.png',
       ],
-      stock: 9,
+      stock: 2,
       description:
         '• Chip M1 de Apple que permite una gran avance el rendimiento del CPU, GPU y aprendizaje automático\
       • Hasta 18 horas de batería para hacer mucho más (1)\
@@ -451,7 +451,7 @@ const productMockUp = async () => {
       image: [
         'https://phonesdata.com/files/models/Xiaomi-Redmi-Note-10S-298.jpg',
       ],
-      stock: 9,
+      stock: 4,
       description:
         ' Pantalla 6,43” 60 Hz FullHD+\
         - Procesador MediaTek Helio G95\
@@ -478,7 +478,7 @@ const productMockUp = async () => {
       image: [
         'https://http2.mlstatic.com/D_NQ_NP_697342-MLV45256394812_032021-O.webp',
       ],
-      stock: 9,
+      stock: 2,
       description:
         ' • 50 vatios x 4 de potencia máxima, balance / atenuador / graves / agudos y ecualizador incorporado preestablecido\
         • Sin reproductor de CD o DVD, reproduce Bluetooth / USB, MP3, WMA, FM / AM, medios digitales de teléfonos inteligentes\
@@ -504,7 +504,7 @@ const productMockUp = async () => {
       image: [
         'https://http2.mlstatic.com/D_NQ_NP_777123-MLV47858377915_102021-O.webp',
       ],
-      stock: 9,
+      stock: 4,
       description:
         ' -Batidora planetaria con 12 velocidades\
         -750 watts de potencia\
@@ -529,7 +529,7 @@ const productMockUp = async () => {
       image: [
         'https://http2.mlstatic.com/D_NQ_NP_816327-MLV48473139838_122021-O.webp',
       ],
-      stock: 9,
+      stock: 6,
       description:
         ' -Tamaño eficiente y compacto para un mejor manejo de planchado y fácil almacenamiento\
         -Te brinda un 20% mayor cobertura al planchar* (*vs GCSTBS3800 de Oster®)\
@@ -558,7 +558,7 @@ const productMockUp = async () => {
       image: [
         'https://http2.mlstatic.com/D_NQ_NP_788598-MLV48379309886_112021-O.webp',
       ],
-      stock: 9,
+      stock: 3,
       description:
         '  Fácil de usar con una configuración sencilla\
         - Transmita TV gratis, noticias en vivo, deportes, música, películas y más\
@@ -586,7 +586,7 @@ const productMockUp = async () => {
         'https://res.cloudinary.com/dr8u3dssn/image/upload/v1651376961/pets/canguro/4_2_mbz86d.png',
         'https://res.cloudinary.com/dr8u3dssn/image/upload/v1651376961/pets/canguro/4_1_cntvot.png',
       ],
-      stock: 20,
+      stock: 4,
       description:
         '- Mochila especialmente diseñada para transportar perros y gatos.\
 \
@@ -616,7 +616,7 @@ const productMockUp = async () => {
         'https://res.cloudinary.com/dr8u3dssn/image/upload/v1651376942/pets/disfraz/3_1_ybplbb.png',
         'https://res.cloudinary.com/dr8u3dssn/image/upload/v1651376942/pets/disfraz/3_2_fuwqxy.png',
       ],
-      stock: 20,
+      stock: 2,
       description:
         'DISFRAZ DE STITCH PARA MASCOTAS\
 \
@@ -641,7 +641,7 @@ const productMockUp = async () => {
         'https://res.cloudinary.com/dr8u3dssn/image/upload/v1651376902/pets/piso/1_3_kwbolr.png',
         'https://res.cloudinary.com/dr8u3dssn/image/upload/v1651376902/pets/piso/1_2_ylyhom.png',
       ],
-      stock: 20,
+      stock: 6,
       description:
         'Súper absorbentes, ideales para entrenar a los cachorros.\
 				Medidas: 60 cm x 60 cm\
@@ -669,7 +669,7 @@ const productMockUp = async () => {
         'https://res.cloudinary.com/dr8u3dssn/image/upload/v1651376980/pets/pechera/5_3_fcaz5d.png',
         'https://res.cloudinary.com/dr8u3dssn/image/upload/v1651376980/pets/pechera/5_2_thwerj.png',
       ],
-      stock: 20,
+      stock: 3,
       description:
         '- Material : Nylon , Poliéster. Son Alcolchados y cómodos.\
       - Sistema : Regulable , se puede ajustar al tamaño de tu mascota.\
@@ -693,7 +693,7 @@ const productMockUp = async () => {
       image: [
         'https://http2.mlstatic.com/D_NQ_NP_876449-MLV43661752653_102020-O.webp',
       ],
-      stock: 20,
+      stock: 2,
       description:
         'KUMAR PLATO acero inoxidable con goma antiresbalante x 3 UNIDADES\
         MEDIDA 11.5 cms de DIAMETRO X 3.5 CMS DE ALTURA',
@@ -717,7 +717,7 @@ const productMockUp = async () => {
         'https://http2.mlstatic.com/D_NQ_NP_950716-MLV46030752672_052021-O.webp',
         'https://http2.mlstatic.com/D_NQ_NP_732914-MLV46031785005_052021-O.webp',
       ],
-      stock: 20,
+      stock: 5,
       description:
         'PLAQUITAS SMALL PARA PERROS O GATOS DE METAL IMPORTADAS\
         SE PUEDE GRABAR POR DELANTE Y DETRAS DE LA MISMA SIN COSTO ADICIONAL\
@@ -743,7 +743,7 @@ const productMockUp = async () => {
         'https://http2.mlstatic.com/D_NQ_NP_839978-MLV40166475211_122019-O.webp',
         'https://http2.mlstatic.com/D_NQ_NP_750414-MLV40166454812_122019-O.webp',
       ],
-      stock: 20,
+      stock: 3,
       description:
         'KENNEL GULLIVER 6 IATA PLUS\
         VIENE CON TORNILLOS DE METAL, BEBEDERO Y CALCOMANIAS\
@@ -773,7 +773,7 @@ const productMockUp = async () => {
         'https://http2.mlstatic.com/D_NQ_NP_993980-MLV48891117329_012022-O.webp',
         'https://http2.mlstatic.com/D_NQ_NP_860834-MLV49266345408_032022-O.webp',
       ],
-      stock: 20,
+      stock: 2,
       description:
         'PENN PLAX ACUARIO DE 4,5 GAL /17 LITROS EN ACRILICO\
         INCLUYE LAMPARA CON BOMBILLO FLUORESCENTE 13 WATT + FILTRO\
@@ -798,7 +798,7 @@ const productMockUp = async () => {
       image: [
         'https://http2.mlstatic.com/D_NQ_NP_916046-MLV42502289874_072020-O.webp',
       ],
-      stock: 20,
+      stock: 3,
       description:
         'PENN PLAX\
         ADORNO PARA PECERAS EN RESINA\
@@ -823,7 +823,7 @@ const productMockUp = async () => {
         'https://http2.mlstatic.com/D_NQ_NP_768693-MLV42471771188_072020-O.webp',
         'https://http2.mlstatic.com/D_NQ_NP_720978-MLV42471801005_072020-O.webp',
       ],
-      stock: 20,
+      stock: 3,
       description:
         'FILTRO ELECTRICO DE AGuA CASCADE 400\
         PARA ACUARIOS DE HASTA 80 LITROS , 400 LITROS X HORA\
@@ -851,7 +851,7 @@ const productMockUp = async () => {
         'https://res.cloudinary.com/dr8u3dssn/image/upload/v1651377076/sport/bici/3_1_kyr2d0.png',
         'https://res.cloudinary.com/dr8u3dssn/image/upload/v1651377076/sport/bici/3_2_m9m7lq.png',
       ],
-      stock: 20,
+      stock: 4,
       description:
         'Material: acero + plástico ABS\
       Resistencia: ajuste continuo\
@@ -873,7 +873,7 @@ const productMockUp = async () => {
     });
     await Product.create({
       name: 'Mancuernas de gimnasio',
-      price: 60,
+      price: 10,
       // newItem: false,
       brand: 'Generica',
       color: 'Varios',
@@ -884,7 +884,7 @@ const productMockUp = async () => {
         'https://res.cloudinary.com/dr8u3dssn/image/upload/v1651377027/sport/pesas/1_3_cb6znh.png',
         'https://res.cloudinary.com/dr8u3dssn/image/upload/v1651377027/sport/pesas/1_2_h1c5oi.png',
       ],
-      stock: 20,
+      stock: 1,
       description:
         'CARACTERÍSTICAS:\
       - 4 discos de 3kg\
@@ -913,7 +913,7 @@ const productMockUp = async () => {
         'https://res.cloudinary.com/dr8u3dssn/image/upload/v1651377061/sport/silla/2_1_lpes7i.png',
         'https://res.cloudinary.com/dr8u3dssn/image/upload/v1651377061/sport/silla/2_2_ddnpkd.png',
       ],
-      stock: 20,
+      stock: 2,
       description:
         'Modelo y diseño: SIX PACK BANCA ABDOMINAL TOTAL 6 EN 1, REGALO 2 BANDAS EJERCICIOS\
       Soporta: hasta 100 Kg\
@@ -944,7 +944,7 @@ const productMockUp = async () => {
         'https://res.cloudinary.com/dr8u3dssn/image/upload/v1651377094/sport/tonificador/4_3_msvouc.png',
         'https://res.cloudinary.com/dr8u3dssn/image/upload/v1651377094/sport/tonificador/4_1_juolob.png',
       ],
-      stock: 35,
+      stock: 5,
       description:
         'Estimulador Smart Fitness 5 En 1 Abdomen Gluteos Brazos Nuca\
 \
@@ -975,7 +975,7 @@ const productMockUp = async () => {
         'https://res.cloudinary.com/dr8u3dssn/image/upload/v1651377119/sport/planchas/5_2_c3s5zw.png',
         'https://res.cloudinary.com/dr8u3dssn/image/upload/v1651377119/sport/planchas/5_3_bacyuv.png',
       ],
-      stock: 35,
+      stock: 3,
       description:
         'Fácil de usar: Plug and play, inserte la manija en la posición codificada por color deseada.Puede acomodar 300 libras de usuarios.\
 \
@@ -1008,7 +1008,7 @@ const productMockUp = async () => {
       image: [
         'https://http2.mlstatic.com/D_NQ_NP_955069-MLV47311127207_082021-O.webp',
       ],
-      stock: 35,
+      stock: 4,
       description:
         'Características Pacha\
         - Número de Dientes (T) : 14 - 16 - 18 - 20 - 22 - 24 - 34\
@@ -1034,7 +1034,7 @@ const productMockUp = async () => {
       image: [
         'https://http2.mlstatic.com/D_NQ_NP_674142-MLV47311246373_082021-O.webp',
       ],
-      stock: 35,
+      stock: 5,
       description:
         'TENSOR TRASERO SHIMANO ALTUS 8 VELOCIDADES\
 \
@@ -1068,7 +1068,7 @@ const productMockUp = async () => {
         'https://http2.mlstatic.com/D_NQ_NP_880934-MLV46389458831_062021-O.webp',
         'https://http2.mlstatic.com/D_NQ_NP_903682-MLV45625012381_042021-O.webp',
       ],
-      stock: 35,
+      stock: 4,
       description:
         'Espigo de Rosca para cajas y frente de dirección normal\
         - Funciona para frenos V- brake o Frenos de Disco',
@@ -1092,7 +1092,7 @@ const productMockUp = async () => {
         'https://http2.mlstatic.com/D_NQ_NP_932839-MLV47830006339_102021-O.webp',
         'https://http2.mlstatic.com/D_NQ_NP_646643-MLV47829945349_102021-O.webp',
       ],
-      stock: 35,
+      stock: 2,
       description:
         'Modelo: GW CONFORT PLUS.\
         .-Diseño ergonómico y anatómico unisex.\
@@ -1124,7 +1124,7 @@ const productMockUp = async () => {
         'https://http2.mlstatic.com/D_NQ_NP_697648-MLV48523538960_122021-O.webp',
         'https://http2.mlstatic.com/D_NQ_NP_691062-MLV48523574221_122021-O.webp',
       ],
-      stock: 35,
+      stock: 4,
       description:
         'Ideales para cualquier Entrenamiento, Gym, Crossfit, Yoga, Pilates. Juego de 5 Ligas de resistencia ajustables de varios colores, con el nivel de resistencia incluido en cada banda, ademas de una guía de ejercicios, bolsa de transporte y accesorios para realizar multitud de ejercicios de brazos, hombros, pecho, glúteos, piernas, etc. Las bandas elásticas pueden utilizarse juntas o por separado, disponen de mangos de espuma y mosquetones de metal para un óptimo agarre y sujeción. Gracias a su diseño portátil y su bolsa de transporte, se puede utilizar fácilmente en cualquier parte.',
 

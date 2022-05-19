@@ -1,5 +1,5 @@
 const { User, Order, Product, Category } = require('../db'); // traer mi modelo
-const {Sequelize} = require('sequelize')
+const { Sequelize } = require('sequelize');
 
 const usersQuantity = async () => {
   const users = await User.findAll({
@@ -68,6 +68,20 @@ const getRadarChar = async () => {
   }));
 };
 
+const getPieChar = async () => {
+  const data = await Product.findAll({
+    attributes: [[Sequelize.fn('count', Sequelize.col('categoryId')), 'value']],
+    include: { model: Category, attributes: ['name'] },
+    group: ['product.categoryId', ['category.name']],
+    raw: true,
+  });
+
+  return data.map(item => ({
+    name: item['category.name'],
+    value: Number(item.value),
+  }));
+};
+
 module.exports = {
   usersQuantity,
   ordersQuantity,
@@ -75,5 +89,6 @@ module.exports = {
   profitAmount,
   lastOrders,
   newProduct,
-  getRadarChar
+  getRadarChar,
+  getPieChar,
 };
