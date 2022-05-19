@@ -18,6 +18,9 @@ module.exports = sequelize => {
 
     total: {
       type: DataTypes.FLOAT,
+      set(value) {
+        this.setDataValue('total', Number(value.toFixed(2)));
+      },
     },
   });
 };

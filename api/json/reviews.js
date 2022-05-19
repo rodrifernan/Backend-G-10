@@ -3,7 +3,7 @@ const reviewsMockUp = async () => {
   try {
     await Reviews.create({
       rating: 5,
-      comment: 'Muy buen producto 01',
+      comment: 'Muy buen producto',
       productId: '4841011e-fbf5-4c92-a770-3b06684f5894',
       userId: '69cacb3c-4ef3-4d72-bbf3-d6618e45a45b',
       finished: true,

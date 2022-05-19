@@ -42,8 +42,8 @@ conn
     await productMockUp();
     await reviewsMockUp();
     await wishlistCartMockUp();
-    await shoppingCartMockUp();
-    await invoicesMockUp();
+    // await shoppingCartMockUp();
+    // await invoicesMockUp();
     await orderMockUp();
 
     await server.listen(process.env.PORT, () => {
